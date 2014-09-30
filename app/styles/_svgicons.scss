@@ -1,0 +1,21 @@
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+@import "variables";
+
+svg {
+  width: 3em;
+  height: 2em;
+  vertical-align: middle;
+}
+
+svg path,
+svg polygon,
+svg rect {
+  fill: $ecg-turquoise-color;
+}
+
+svg circle {
+  stroke: $ecg-turquoise-color;
+  stroke-width: 1;
+}
