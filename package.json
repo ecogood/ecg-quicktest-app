@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "ECG quick test - test the common good contribution of your company",
   "dependencies": {
-    "ecg-data-quicktest": "0.0.1"
+    "ecg-quicktest-model": "0.0.1",
+    "ecg-quicktest-texts": "0.0.3"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
