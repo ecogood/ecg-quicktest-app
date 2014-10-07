@@ -1,14 +1,5 @@
 'use strict';
 
-var translation = {
-  en: {
-    name: 'English'
-  },
-  de: {
-    name: 'Deutsch'
-  }
-};
-
 /**
  * @ngdoc function
  * @name ecgQuicktestApp.controller:MainCtrl
@@ -17,10 +8,9 @@ var translation = {
  * Controller of the ecgQuicktestApp
  */
 angular.module('ecgQuicktestApp')
-  .controller('MainCtrl', function($scope, locale, localeEvents) {
+  .controller('MainCtrl', function($scope, locale, localeEvents, ecgQuicktestTexts) {
     function refresh(lang) {
-      console.log('lang = ', lang);
-      $scope.t = translation[lang.substring(0,2)];
+      $scope.t = ecgQuicktestTexts[lang.substring(0,2)];
     }
 
     refresh(locale.getLocale());
