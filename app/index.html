@@ -23,12 +23,19 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="container">
+<div class="container" ng-controller="MainCtrl">
 
   <div class="header">
     <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
 
-    <h1 class="header-title text-center">Schnelltest Gemeinwohl-Ökonomie</h1>
+<div class="text-center">
+  <a href="" data-ng-click="setLocale('en-US')">English</a>
+  |
+  <a href="" data-ng-click="setLocale('de-DE')">German</a>
+  <hr>
+</div>
+
+    <h1 class="header-title text-center">{{t.name}}</h1>
   </div>
 
   <div ng-view=""></div>
@@ -76,7 +83,9 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
+<script src="scripts/services/quicktest-texts.js"></script>
 <script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/home.js"></script>
 <script src="scripts/controllers/about.js"></script>
 <script src="scripts/controllers/test-start.js"></script>
 <script src="scripts/controllers/test-question.js"></script>

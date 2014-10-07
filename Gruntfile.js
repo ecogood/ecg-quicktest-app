@@ -406,7 +406,21 @@ module.exports = function(grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    filesToJavascript: {
+      texts: {
+        options: {
+          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
+          inputFilePrefix: 'quicktest-texts.',
+          inputFileExtension: 'json',
+          outputBaseFile: 'app/scripts/services/quicktest-texts-base.js',
+          outputBaseFileVariable: 'ecgQuicktestTexts',
+          outputFile: 'app/scripts/services/quicktest-texts.js'
+        }
+      }
     }
+
   });
 
 
@@ -417,6 +431,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
+      'filesToJavascript',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -460,4 +475,10 @@ module.exports = function(grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('convertTexts', [
+    'filesToJavascript'
+  ]);
+
+
 };
