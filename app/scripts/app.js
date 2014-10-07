@@ -15,9 +15,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngLocalize',
+    'ngLocalize.Events'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,17 +29,23 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/start', {
+        templateUrl: 'views/test-start.html',
+        controller: 'TestStartCtrl'
+      })
+      .when('/test/:questionNumber', {
+        templateUrl: 'views/test-questions.html',
+        controller: 'TestQuestionsCtrl'
+      })
+      .when('/results', {
+        templateUrl: 'views/test-results.html',
+        controller: 'TestResultsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
-    /*
-     * / - main page
-     * /test - enter company name and type
-     * /test/1
-     * /test/2
-     * /test/...
-     * /test/27
-     * /test/result - show results, btn "start a new test"
-     *
-     */
-  });
+  })
+  .value('localeSupported', [
+    'en-US',
+    'de-DE'
+  ]);
