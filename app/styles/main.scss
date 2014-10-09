@@ -4,6 +4,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 @import "variables";
 @import "svgicons";
+@import "general";
 
 body {
   color: $grey-color;
@@ -40,6 +41,16 @@ body {
   padding: 20px 0px 10px 0px;
   color: $ecg-turquoise-dark-color;
 }
+
+.readMore-container {
+  padding-bottom: 20px;
+}
+
+.questionText {
+  padding: 20px 0;
+  height: 8em;
+}
+
 
 /* Custom page footer */
 .footer {

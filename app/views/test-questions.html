@@ -1,4 +1,21 @@
-<p>questionNumber: {{questionNumber}}</p>
-<p translate>Foo: {{'FOO'}}</p>
-<p translate>Content: {{'content[0]'}}</p>
-<p translate>Poeple: {{'people[0].name'}}</p>
+<div class="questionNav">
+  <button ng-click="goToQuestion(questionNumber-1)">prev</button>
+  <button ng-click="goToQuestion(questionNumber+1)">next</button>
+</div>
+
+<p>
+  {{question.stakeholders}}{{question.ecgValue}} -
+  {{question.indicatorTitle}}
+</p>
+
+<div class="questionText">
+  <p>{{question.text}}</p>
+</div>
+
+<button ng-repeat="i in [0,1,2,3,4]"
+        class="btn btn-default btn-gwoe-level-{{i}}"
+        ng-class="{active: test.getAnswer(questionNumber) === i}"
+        ng-click="answerClicked(i);"
+        type="button">
+  {{t.structure.individualAnswer.evaluationValues[i].text}}
+</button>

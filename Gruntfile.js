@@ -18,7 +18,8 @@ module.exports = function(grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    scripts: 'app/scripts'
   };
 
   // Define the configuration for all the tasks
@@ -26,6 +27,7 @@ module.exports = function(grunt) {
 
     // Project settings
     yeoman: appConfig,
+    dir: appConfig,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -46,6 +48,14 @@ module.exports = function(grunt) {
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
+      },
+      texts: {
+        files: ['<%= yeoman.app %>/scripts/i18n/*.json'],
+        tasks: ['json_merge', 'filesToJavascript']
+      },
+      browserifyQuicktestModel: {
+        files: ['<%= dir.scripts %>/services/quicktest-model-base.js'],
+        tasks: ['browserify']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -408,15 +418,43 @@ module.exports = function(grunt) {
       }
     },
 
+    json_merge: {
+      englishFiles: {
+        files: {
+          '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
+            '<%= dir.scripts %>/i18n/*en.json'
+          ]
+        }
+      },
+      germanFiles: {
+        files: {
+          '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
+            '<%= dir.scripts %>/i18n/*de.json'
+          ]
+        }
+      }
+    },
+
     filesToJavascript: {
       texts: {
         options: {
-          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
-          inputFilePrefix: 'quicktest-texts.',
+//          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
+          inputFilesFolder: '<%= dir.scripts %>/i18n/generated',
+          inputFilePrefix: 'generated-texts.',
           inputFileExtension: 'json',
           outputBaseFile: 'app/scripts/services/quicktest-texts-base.js',
           outputBaseFileVariable: 'ecgQuicktestTexts',
           outputFile: 'app/scripts/services/quicktest-texts.js'
+        }
+      }
+    },
+
+    browserify: {
+      quicktestModel: {
+        files: {
+          '<%= dir.scripts %>/services/quicktest-model.js': [
+            '<%= dir.scripts %>/services/quicktest-model-base.js'
+          ]
         }
       }
     }
@@ -431,6 +469,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
+      'json_merge',
       'filesToJavascript',
       'wiredep',
       'concurrent:server',
@@ -477,8 +516,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('convertTexts', [
-    'filesToJavascript'
+    'json_merge', 'filesToJavascript'
   ]);
-
 
 };

@@ -1,2 +1,4 @@
 app/scripts/vendor/**
 app/scripts/services/quicktest-texts.js
+app/scripts/services/quicktest-model.js
+Gruntfile.js

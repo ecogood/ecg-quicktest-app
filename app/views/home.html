@@ -1,13 +1,41 @@
-<div class="" style="text-align: center;">
+<div class="text-center">
 
   <p class="lead">
-    Bekommen Sie anhand von 27 Fragen (Einzelunternehmen: 20 Fragen) Einblick, wie gemeinwohlorientiert Sie
-    wirtschaften.
+    {{t.introduction.pitch}}
+  </p>
+
+  <div class="readMore-container">
+    <a ng-click="readMore=!readMore" href="">{{t.app.readMore}}</a>
+
+    <div ng-show="readMore" class="p-top">
+      <p ng-repeat="content in t.introduction.content" ng-bind-html="content">
+      </p>
+    </div>
+  </div>
+
+  <p>
+    {{t.app.PleaseEnter}}
   </p>
 
   <p>
-    <a ng-href="#/start" href="" class="btn btn-lg btn-success">
-      Test öffnen
+    <label for="companyName">
+      {{t.app.CompanyName}}
+    </label>
+    <input type="text" ng-model="participantName" id="companyName"/>
+  </p>
+
+  <p>
+    <label for="selfEmplyoed">
+      {{t.app.AreYouSelfEmployed}}
+    </label>
+    <select ng-model="isSelfEmployed" name="selfEmplyoed" id="selfEmplyoed" ng-change="setSelfEmployed()">
+      <option value="false">{{t.app.No}}</option>
+      <option value="true">{{t.app.Yes}}</option>
+    </select>
+  </p>
+  <p>
+    <a ng-click="startTest()" href="" class="btn btn-lg btn-success">
+      {{t.app.startTest}}
       <svg viewBox="0 0 20 20">
         <path fill="none" d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
                     l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>

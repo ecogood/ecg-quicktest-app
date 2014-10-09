@@ -25,14 +25,6 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/start', {
-        templateUrl: 'views/test-start.html',
-        controller: 'TestStartCtrl'
-      })
       .when('/test/:questionNumber', {
         templateUrl: 'views/test-questions.html',
         controller: 'TestQuestionsCtrl'

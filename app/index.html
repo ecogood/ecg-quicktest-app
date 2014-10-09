@@ -26,14 +26,16 @@
 <div class="container" ng-controller="MainCtrl">
 
   <div class="header">
-    <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
+    <a href="/">
+      <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
+    </a>
 
-<div class="text-center">
-  <a href="" data-ng-click="setLocale('en-US')">English</a>
-  |
-  <a href="" data-ng-click="setLocale('de-DE')">German</a>
-  <hr>
-</div>
+    <div class="text-center">
+      <a href="" data-ng-click="setLocale('en-US')">English</a>
+      |
+      <a href="" data-ng-click="setLocale('de-DE')">German</a>
+      <hr>
+    </div>
 
     <h1 class="header-title text-center">{{t.name}}</h1>
   </div>
@@ -77,17 +79,16 @@
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="scripts/vendor/angular-localization.min.js"></script>
+<script src="bower_components/angular-localization/angular-localization.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/services/quicktest-texts.js"></script>
+<script src="scripts/services/quicktest-model.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/home.js"></script>
-<script src="scripts/controllers/about.js"></script>
-<script src="scripts/controllers/test-start.js"></script>
 <script src="scripts/controllers/test-question.js"></script>
 <script src="scripts/controllers/test-results.js"></script>
 <!-- endbuild -->
