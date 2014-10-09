@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "ecg-quicktest-model": "^0.0.3",
-    "ecg-quicktest-texts": "^0.0.5"
+    "ecg-quicktest-texts": "^0.0.6"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
