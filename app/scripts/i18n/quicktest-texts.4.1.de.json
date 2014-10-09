@@ -1,32 +1,30 @@
 {
   "matrixVersion": "4.1",
-  "name": "Quick test Economy for the Common Good",
+  "name": "Schnelltest Gemeinwohl-Ökonomie",
   "introduction": {
+    "pitch": "Bekommen Sie anhand von 27 Fragen (Einzelunternehmen: 20 Fragen) Einblick, wie gemeinwohlorientiert Sie wirtschaften",
     "content": [
-      "<p>Die Gemeinwohl-Ökonomie ist eine Vision für eine menschenwürdige und nachhaltige Wirtschafts- und Lebensweise. Die Wirtschaft soll nach denselben Werten gestaltet werden, die menschliche Beziehungen gelingen lassen und zudem bereits in den Verfassungen verankert sind. Das erste Ziel des Wirtschaftens ist nicht mehr Profitmaximierung, sondern die Mehrung des Gemeinwohls.</p>",
-      "<p>Der Beitrag eines Unternehmens zum Gemeinwohl wird auf Basis der Gemeinwohl-Matrix definiert und messbar gemacht.</p>",
-      "<p>Die Gemeinwohl-Bilanz beantwortet, wie ich als UnternehmerIn fünf Grundwerte (neben der Freiheit die häufigsten Verfassungswerte demokratischer Staaten): Menschenwürde, Solidarität, Ökologische Nachhaltigkeit, soziale Gerechtigkeit und Demokratie/Transparenz lebe - im Kontakt mit den wichtigsten Berührungsgruppen: LieferantInnen, GeldgeberInnen, MitarbeiterInnen, KundInnen/Mitunternehmen (heute: KonkurrentInnen) und dem gesellschaftlichen Umfeld.</p>",
-      "<p>So entstehen an den Schnittstellen von Werten und Berührungsgruppen 17 Indikatoren, die den Beitrag eines Unternehmens zum Gemeinwohl messen. Zum Beispiel steht an der Schnittstelle „Menschenwürde“ und  „MitarbeiterInnen“ der Indikator C1 „Arbeitsplatzqualität“.</p>",
-      "<p>Mit Hilfe eines Gemeinwohl-Berichtes gibt ein Unternehmen detailliert Auskunft über seine Leistungen und seinen Beitrag zum Gemeinwohl, anhand dieser 17 Indikatoren. Diese Auseinandersetzung braucht Vertiefung und Zeit, die viele Unternehmen aufgrund wirtschaftlicher Zwänge, knapper Ressourcen oder anderer Umstände nicht immer haben.</p>",
-      "<p>Um einen „schnellen“ ersten Einblick zu bekommen, haben wir deshalb diesen Schnelltest von Thomas Haderlapp für die Matrix 4.1 modifiziert und neu gestaltet. Innerhalb einer halben Stunde gewinnen Sie einen Eindruck, worum es in der GWÖ geht und zudem ein grobes Erstergebnis, wie gemeinwohlorientiert Sie wirtschaften.</p>",
-      "<p>Der darauf folgende Schritt könnte sein, eine „Einstiegsbilanz“ zu erstellen, das ist eine vereinfachte Form der Gemeinwohl-Bilanz. Unterhalb der fortlaufenden Fragen-Nummern haben wir in Blau die zugehörigen Indikatoren der GWÖ-Matrix angegeben. Zum Beispiel steht unter der Frage „1.“ der Indikator „A1“ (= Ethisches Beschaffungswesen). So können Sie bei Interesse jederzeit im Handbuch nachschlagen und dort Hintergrundinformationen zum jeweiligen Indikator nachlesen.</p>",
-      "<p>Die Matrix, das dazugehörige Handbuch zur Bilanzerstellung und weitere hilfreiche Dokumente finden Sie hier: <a href=\"http://gemeinwohl-oekonomie.org/de/content/downloads\">Link GWÖ-Dokumente</a>.</p>",
-      "<p>Christian Rüther und das Matrix-Entwicklungsteam</p>",
-      "<p><strong>Hinweis</strong>: Ihre Daten werden nicht über das Internet übertragen und dementsprechend nicht gespeichert!</p>"
-    ],
-    "startButtonText": "Test starten"
+      "Die Gemeinwohl-Ökonomie ist eine Vision für eine menschenwürdige und nachhaltige Wirtschafts- und Lebensweise. Die Wirtschaft soll nach denselben Werten gestaltet werden, die menschliche Beziehungen gelingen lassen und zudem bereits in den Verfassungen verankert sind. Das erste Ziel des Wirtschaftens ist nicht mehr Profitmaximierung, sondern die Mehrung des Gemeinwohls.",
+      "Der Beitrag eines Unternehmens zum Gemeinwohl wird auf Basis der Gemeinwohl-Matrix definiert und messbar gemacht.",
+      "Die Gemeinwohl-Bilanz beantwortet, wie ich als UnternehmerIn fünf Grundwerte (neben der Freiheit die häufigsten Verfassungswerte demokratischer Staaten): Menschenwürde, Solidarität, Ökologische Nachhaltigkeit, soziale Gerechtigkeit und Demokratie/Transparenz lebe - im Kontakt mit den wichtigsten Berührungsgruppen: LieferantInnen, GeldgeberInnen, MitarbeiterInnen, KundInnen/Mitunternehmen (heute: KonkurrentInnen) und dem gesellschaftlichen Umfeld.",
+      "So entstehen an den Schnittstellen von Werten und Berührungsgruppen 17 Indikatoren, die den Beitrag eines Unternehmens zum Gemeinwohl messen. Zum Beispiel steht an der Schnittstelle „Menschenwürde“ und  „MitarbeiterInnen“ der Indikator C1 „Arbeitsplatzqualität“.",
+      "Mit Hilfe eines Gemeinwohl-Berichtes gibt ein Unternehmen detailliert Auskunft über seine Leistungen und seinen Beitrag zum Gemeinwohl, anhand dieser 17 Indikatoren. Diese Auseinandersetzung braucht Vertiefung und Zeit, die viele Unternehmen aufgrund wirtschaftlicher Zwänge, knapper Ressourcen oder anderer Umstände nicht immer haben.",
+      "Um einen „schnellen“ ersten Einblick zu bekommen, haben wir deshalb diesen Schnelltest von Thomas Haderlapp für die Matrix 4.1 modifiziert und neu gestaltet. Innerhalb einer halben Stunde gewinnen Sie einen Eindruck, worum es in der GWÖ geht und zudem ein grobes Erstergebnis, wie gemeinwohlorientiert Sie wirtschaften.",
+      "Der darauf folgende Schritt könnte sein, eine „Einstiegsbilanz“ zu erstellen, das ist eine vereinfachte Form der Gemeinwohl-Bilanz. Unterhalb der fortlaufenden Fragen-Nummern haben wir in Blau die zugehörigen Indikatoren der GWÖ-Matrix angegeben. Zum Beispiel steht unter der Frage „1.“ der Indikator „A1“ (= Ethisches Beschaffungswesen). So können Sie bei Interesse jederzeit im Handbuch nachschlagen und dort Hintergrundinformationen zum jeweiligen Indikator nachlesen.",
+      "Die Matrix, das dazugehörige Handbuch zur Bilanzerstellung und weitere hilfreiche Dokumente finden Sie hier: <a href=\"http://gemeinwohl-oekonomie.org/de/content/downloads\">Link GWÖ-Dokumente</a>.",
+      "Christian Rüther und das Matrix-Entwicklungsteam",
+      "<strong>Hinweis</strong>: Ihre Daten werden nicht über das Internet übertragen und dementsprechend nicht gespeichert!"
+    ]
   },
   "structure": {
     "participants": [
       {
         "type": "company",
-        "name": "Unternehmen",
-        "text": "Nein"
+        "name": "Unternehmen"
       },
       {
-        "type": "oneperson",
-        "name": "Einzelunternehmen",
-        "text": "Ja"
+        "type": "self-employed",
+        "name": "Einzelunternehmen"
       }
     ],
     "individualAnswer": {
@@ -56,36 +54,32 @@
     "result": {
       "feedback": [
         {
-          "minValue": 0,
-          "maxValue": 32,
+          "level": 0,
           "content": [
-            "<p>Ihr Unternehmen setzt sich mit gemeinwohlorientierten Aspekten auseinander und geht damit bereits über die gesetzlichen Mindeststandards hinaus. Allerdings gibt es noch ein sehr hohes Entwicklungspotenzial in Richtung Gemeinwohl und Nachhaltigkeit.</p>",
-            "<p>Allerdings gibt es noch ein sehr hohes Entwicklungspotenzial in Richtung Gemeinwohl und Nachhaltigkeit.</p>",
-            "<p>Der interne Gemeinwohl-Bericht kann helfen, den Status quo detaillierter zu ermitteln und darauf aufbauend Ziele und Maßnahmen für das nächste Jahr zu setzen.</p>"
+            "Ihr Unternehmen setzt sich mit gemeinwohlorientierten Aspekten auseinander und geht damit bereits über die gesetzlichen Mindeststandards hinaus. Allerdings gibt es noch ein sehr hohes Entwicklungspotenzial in Richtung Gemeinwohl und Nachhaltigkeit.",
+            "Allerdings gibt es noch ein sehr hohes Entwicklungspotenzial in Richtung Gemeinwohl und Nachhaltigkeit.",
+            "Der interne Gemeinwohl-Bericht kann helfen, den Status quo detaillierter zu ermitteln und darauf aufbauend Ziele und Maßnahmen für das nächste Jahr zu setzen."
           ]
         },
         {
-          "minValue": 33,
-          "maxValue": 62,
+          "level": 1,
           "content": [
-            "<p>Ihr Unternehmen hat bereits mehr als 25% der Gemeinwohl-Aspekte verwirklicht und befindet sich auf einem „guten“ Weg.</p>",
-            "<p>Für einen besseren Überblick könnten Sie jetzt eine Einstiegsbilanz erstellen, die eine  detailliertere Auseinandersetzung ermöglicht und gleichzeitig weniger Zeit benötigt als eine vollständige Gemeinwohl-Bilanz.</p>"
+            "Ihr Unternehmen hat bereits mehr als 25% der Gemeinwohl-Aspekte verwirklicht und befindet sich auf einem „guten“ Weg.",
+            "Für einen besseren Überblick könnten Sie jetzt eine Einstiegsbilanz erstellen, die eine  detailliertere Auseinandersetzung ermöglicht und gleichzeitig weniger Zeit benötigt als eine vollständige Gemeinwohl-Bilanz."
           ]
         },
         {
-          "minValue": 63,
-          "maxValue": 94,
+          "level": 2,
           "content": [
-            "<p>Ihr Unternehmen ist schon sehr nachhaltigkeitsorientiert und legt gesteigerten Wert auf sozial- und umweltgerechtes Wirtschaften. Erstellen Sie wenn möglich einen Gemeinwohl-Bericht und treten Sie, falls noch nicht geschehen, in Kontakt mit gleichgesinnten Unternehmen, um gemeinsam effektiver zu lernen.</p>",
-            "<p>Ein Gemeinwohl-Bericht ermöglicht eine detaillierte Aufschlüsselung ihres aktuellen Stands und hilft Ihnen, Bereiche mit Entwicklungspotenzial zu definieren sowie weitere Verbesserungen strategisch anzugehen.</p>"
+            "Ihr Unternehmen ist schon sehr nachhaltigkeitsorientiert und legt gesteigerten Wert auf sozial- und umweltgerechtes Wirtschaften. Erstellen Sie wenn möglich einen Gemeinwohl-Bericht und treten Sie, falls noch nicht geschehen, in Kontakt mit gleichgesinnten Unternehmen, um gemeinsam effektiver zu lernen.",
+            "Ein Gemeinwohl-Bericht ermöglicht eine detaillierte Aufschlüsselung ihres aktuellen Stands und hilft Ihnen, Bereiche mit Entwicklungspotenzial zu definieren sowie weitere Verbesserungen strategisch anzugehen."
           ]
         },
         {
-          "minValue": 95,
-          "maxValue": 126,
+          "level": 3,
           "content": [
-            "<p>Ihr Unternehmen ist bereits vorbildlich in Bezug auf viele Kriterien und Ziele der Gemeinwohlökonomie.</p>",
-            "<p>Wahrscheinlich sind Sie schon ein GWÖ-Unternehmen oder seit Jahren branchenführend in der Nachhaltigkeits- oder Social-Business-Szene. Als VorreiterIn und PionierIn sind Sie Vorbild für ihre Mitunternehmen und Inspiration für andere ethisch interessierte Betriebe. Wir laden Sie herzlich ein, einen Gemeinwohl-Bericht zu verfassen und ihre Erfahrung weiterzugeben!</p>"
+            "Ihr Unternehmen ist bereits vorbildlich in Bezug auf viele Kriterien und Ziele der Gemeinwohlökonomie.",
+            "Wahrscheinlich sind Sie schon ein GWÖ-Unternehmen oder seit Jahren branchenführend in der Nachhaltigkeits- oder Social-Business-Szene. Als VorreiterIn und PionierIn sind Sie Vorbild für ihre Mitunternehmen und Inspiration für andere ethisch interessierte Betriebe. Wir laden Sie herzlich ein, einen Gemeinwohl-Bericht zu verfassen und ihre Erfahrung weiterzugeben!"
           ]
         }
       ]

@@ -1,0 +1,11 @@
+{
+  "app": {
+    "startTest": "Start Test",
+    "readMore": "read more",
+    "PleaseEnter": "Please enter",
+    "CompanyName": "Company name",
+    "AreYouSelfEmployed": "Are you self-employed?",
+    "Yes": "Yes",
+    "No": "No"
+  }
+}

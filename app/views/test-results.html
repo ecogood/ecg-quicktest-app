@@ -1,3 +1,6 @@
 <p>
-  Test results. You have {{points}} ECG points.
+  Test results. You reached {{points}} from {{maxPoints}} ECG points.
+</p>
+<p ng-repeat="p in t.structure.result.feedback[level].content">
+  {{p}}
 </p>
