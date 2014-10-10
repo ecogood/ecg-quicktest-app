@@ -15,6 +15,19 @@ $btn-darken-percentage: 5;
   border-color: darken($ecg-olive-color, $btn-darken-percentage);
 }
 
+.btn-ecg-turquoise {
+  background-color: $ecg-turquoise-color-dark;
+  border-color: $ecg-turquoise-color-dark;
+  color: $white;
+}
+
+.btn-ecg-turquoise:hover,
+.btn-ecg-turquoise.active {
+  background-color: darken($ecg-turquoise-color-dark, $btn-darken-percentage);
+  border-color: darken($ecg-turquoise-color-dark, $btn-darken-percentage);
+  color: $white;
+}
+
 .btn-ecg-level-white-color-hover {
   border-color: darken($grey-light-border, $btn-darken-percentage);
   color: $white;
