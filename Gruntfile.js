@@ -410,14 +410,16 @@ module.exports = function(grunt) {
       englishFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
-            '<%= dir.scripts %>/i18n/*en.json'
+            '<%= dir.scripts %>/i18n/*en.json',
+            'node_modules/ecg-quicktest-texts/data/*en.json'
           ]
         }
       },
       germanFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
-            '<%= dir.scripts %>/i18n/*de.json'
+            '<%= dir.scripts %>/i18n/*de.json',
+            'node_modules/ecg-quicktest-texts/data/*de.json'
           ]
         }
       }
