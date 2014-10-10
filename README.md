@@ -9,7 +9,8 @@ npm install --save ecg-quicktest
 
 ## Roadmap
 
-* TODO
+* Create first working version in AngularJS with previous and next buttons, and state of given answers
+* Add English translation
 
 ## Contributing
 
