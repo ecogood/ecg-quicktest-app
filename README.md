@@ -1,4 +1,4 @@
-ECG quick test
+ECG quick test App
 ==================
 
 ## Installation
