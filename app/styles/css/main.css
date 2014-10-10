@@ -4774,7 +4774,10 @@ body {
   padding-bottom: 20px; }
 
 .question-data-form {
-  max-width: 300px; }
+  max-width: 300px;
+  font-size: 2rem; }
+  .question-data-form input, .question-data-form select {
+    font-size: 1.7rem; }
 
 .questionNav-container {
   height: 5rem; }
@@ -4787,7 +4790,7 @@ body {
 .questionText {
   padding: 20px 0;
   min-height: 11em;
-  font-size: 1.5rem; }
+  font-size: 1.7rem; }
 
 .result-company-name-container {
   padding-bottom: 10px;
@@ -4805,7 +4808,7 @@ body {
   font-size: 16px !important; }
 
 .resultFeedbackText {
-  font-size: 1.5rem; }
+  font-size: 1.7rem; }
 
 /* Custom page footer */
 .footer {
