@@ -22,6 +22,7 @@ angular.module('ecgQuicktestApp')
       $scope.test = test;
       $scope.companyName = $scope.test.getParticipant().name;
       $scope.questionNumber = questionNumber;
+      $scope.$parent.testProgress = $scope.test.getPercentageFinished();
       $scope.question = $scope.t.test.questions[$scope.questionNumber - 1];
 
       $scope.goToPrevQuestion = function() {

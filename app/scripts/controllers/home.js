@@ -9,8 +9,9 @@
  */
 angular.module('ecgQuicktestApp')
   .controller('HomeCtrl', function($scope, $log, $location, ecgQuicktestModel) {
+
+    $scope.$parent.testProgress = 0;
     $scope.readMore = false;
-    $scope.$log = $log;
 
     $scope.participantType = 'company';
     $scope.isSelfEmployed = false;
