@@ -4615,6 +4615,9 @@ svg circle {
 /* ECG Colors */
 /* Fonts */
 /* RESPONSIVE VARIABLES */
+a, a:hover, a:active, a:focus {
+  outline: 0; }
+
 /* Layout */
 .center-block {
   margin: 0 auto; }

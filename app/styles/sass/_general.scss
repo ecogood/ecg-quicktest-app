@@ -8,6 +8,10 @@ $distance-big: $distance-normal * 2;
 //noinspection CssUnknownTarget
 @import "mixins";
 
+a, a:hover, a:active, a:focus {
+   outline: 0;
+}
+
 /* Layout */
 .center-block {
   margin: 0 auto;
