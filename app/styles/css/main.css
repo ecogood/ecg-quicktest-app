@@ -4765,8 +4765,7 @@ body {
 .questionIndicator {
   text-align: center;
   font-size: 2rem;
-  font-weight: bold;
-  color: #CCCB98; }
+  color: #999933; }
 
 .questionText {
   padding: 20px 0;
@@ -4778,7 +4777,7 @@ body {
   text-align: center; }
   .result-company-name-container h2 {
     margin-top: 5px;
-    color: #666666; }
+    color: #808080; }
 
 .progress-vertical-ecg {
   float: right !important;
