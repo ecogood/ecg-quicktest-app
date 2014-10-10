@@ -1,0 +1,34 @@
+.ecg-level-0-bg {
+  background-color: $basic-level-color;
+}
+
+.ecg-level-0-bg-text {
+  background-color: $basic-level-color !important;
+  color: $grey-dark !important;
+}
+
+.ecg-level-1-bg {
+  background-color: $advanced-level-color;
+}
+
+.ecg-level-1-bg-text {
+  background-color: $advanced-level-color !important;
+  color: $grey-dark !important;
+}
+.ecg-level-2-bg {
+  background-color: $experienced-level-color;
+}
+
+.ecg-level-2-bg-text {
+  background-color: $experienced-level-color !important;
+  color: $white !important;
+}
+
+.ecg-level-3-bg {
+  background-color: $model-level-color;
+}
+
+.ecg-level-3-bg-text {
+  background-color: $model-level-color !important;
+  color: $white !important;
+}

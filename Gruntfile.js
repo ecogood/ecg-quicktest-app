@@ -19,7 +19,8 @@ module.exports = function(grunt) {
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
-    scripts: 'app/scripts'
+    scripts: 'app/scripts',
+    styles: 'app/styles'
   };
 
   // Define the configuration for all the tasks
@@ -57,9 +58,12 @@ module.exports = function(grunt) {
         files: ['<%= dir.scripts %>/services/quicktest-model-base.js'],
         tasks: ['browserify']
       },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+      sass : {
+        files: ['<%= dir.styles %>/sass/**.scss'],
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -192,31 +196,14 @@ module.exports = function(grunt) {
       }
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
+
+    sass: {
       options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
+        sourceMap: false
       },
       dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
-      },
-      server: {
-        options: {
-          debugInfo: true
+        files: {
+          '<%= dir.styles %>/css/main.css': '<%= dir.styles %>/sass/main.scss'
         }
       }
     },
@@ -227,8 +214,8 @@ module.exports = function(grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+//          '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
     },
@@ -369,8 +356,8 @@ module.exports = function(grunt) {
               '.htaccess',
               '*.html',
               'views/{,*/}*.html',
-              'images/{,*/}*.{webp}',
-              'fonts/*'
+              'images/{,*/}*.{webp}'
+//              'fonts/*'
             ]
           },
           {
@@ -378,13 +365,14 @@ module.exports = function(grunt) {
             cwd: '.tmp/images',
             dest: '<%= yeoman.dist %>/images',
             src: ['generated/*']
-          },
-          {
-            expand: true,
-            cwd: '.',
-            src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-            dest: '<%= yeoman.dist %>'
           }
+//          ,
+//          {
+//            expand: true,
+//            cwd: '.',
+//            src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+//            dest: '<%= yeoman.dist %>'
+//          }
         ]
       },
       styles: {
@@ -398,13 +386,13 @@ module.exports = function(grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+//        'compass:server'
       ],
       test: [
-        'compass'
+//        'compass'
       ],
       dist: [
-        'compass:dist',
+//        'compass:dist',
         'imagemin',
         'svgmin'
       ]
@@ -517,6 +505,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('convertTexts', [
     'json_merge', 'filesToJavascript'
+  ]);
+
+  grunt.registerTask('browser', [
+    'browserify'
   ]);
 
 };

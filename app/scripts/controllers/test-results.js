@@ -16,10 +16,12 @@ angular.module('ecgQuicktestApp')
     } else {
 
       $scope.test = $scope.$parent.test;
+      $scope.companyName = $scope.test.getParticipant().name;
 
       var result = $scope.test.getResult();
       $scope.points = result.points;
       $scope.level = result.level;
+      $scope.percentage = result.percentage;
       $scope.maxPoints = $scope.test.getMaxPoints();
     }
   });

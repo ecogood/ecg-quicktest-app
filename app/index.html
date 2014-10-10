@@ -11,7 +11,8 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+  <link rel="stylesheet" href="styles/css/vendor/bootstrap-progressbar-3.2.0.css">
   <!-- endbuild -->
 </head>
 <body ng-app="ecgQuicktestApp">
@@ -30,21 +31,34 @@
       <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
     </a>
 
-    <div class="text-center">
-      <a href="" data-ng-click="setLocale('en-US')">English</a>
-      |
-      <a href="" data-ng-click="setLocale('de-DE')">German</a>
-      <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="pull-right">
+          <img src="images/flags/usa-flag-32px.png" title="English"
+               class="cursor-pointer"
+               ng-class="{halfTransparent: lang !== 'en'}"
+               data-ng-click="setLocale('en-US')"/>
+          <img src="images/flags/germany-flag-32px.png" title="Deutsch"
+               class="cursor-pointer"
+               ng-class="{halfTransparent: lang !== 'de'}"
+               data-ng-click="setLocale('de-DE')"/>
+        </div>
+      </div>
     </div>
 
-    <h1 class="header-title text-center">{{t.name}}</h1>
+    <div class="row text-center">
+      <h1 class="header-title text-center">{{t.name}}</h1>
+    </div>
   </div>
 
   <div ng-view=""></div>
 
   <div class="footer text-right">
-    <p><a href="https://github.com/nikolayhg/ecg-quicktest">Open Source</a> with <span
-        class="glyphicon glyphicon-heart"></span>
+    <p>
+      made with
+      <a href="https://github.com/nikolayhg/ecg-quicktest">
+        Open Source <span class="glyphicon glyphicon-heart"></span>
+      </a>
     </p>
   </div>
 
@@ -80,6 +94,7 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-localization/angular-localization.js"></script>
+<script src="bower_components/bootstrap-progressbar/bootstrap-progressbar.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -91,6 +106,8 @@
 <script src="scripts/controllers/home.js"></script>
 <script src="scripts/controllers/test-question.js"></script>
 <script src="scripts/controllers/test-results.js"></script>
+<script src="scripts/directives/bootstrap-progressbar.js"></script>
+<script src="scripts/vendor/bootstrap-progressbar.min.js"></script>
 <!-- endbuild -->
 </body>
 </html>

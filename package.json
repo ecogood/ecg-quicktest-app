@@ -14,7 +14,7 @@
     "app"
   ],
   "dependencies": {
-    "ecg-quicktest-model": "^0.0.3",
+    "ecg-quicktest-model": "^0.0.4",
     "ecg-quicktest-texts": "^0.0.6"
   },
   "devDependencies": {
@@ -40,6 +40,7 @@
     "grunt-karma": "^0.9.0",
     "grunt-newer": "^0.7.0",
     "grunt-ng-annotate": "^0.3.0",
+    "grunt-sass": "^0.14.2",
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.1.1",
     "grunt-wiredep": "^1.7.0",

@@ -6,6 +6,8 @@
     "CompanyName": "Company name",
     "AreYouSelfEmployed": "Are you self-employed?",
     "Yes": "Yes",
-    "No": "No"
+    "No": "No",
+    "PreviousQuestion": "Previous Question",
+    "NextQuestion": "Next Question"
   }
 }

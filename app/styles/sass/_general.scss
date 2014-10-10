@@ -1,0 +1,47 @@
+$distance-normal: 20px;
+$distance-small: $distance-normal / 2;
+$distance-smallest: $distance-small / 2;
+$distance-big: $distance-normal * 2;
+
+//noinspection CssUnknownTarget
+@import "variables";
+//noinspection CssUnknownTarget
+@import "mixins";
+
+/* Layout */
+.center-block {
+  margin: 0 auto;
+}
+
+
+.p-bottom {
+  padding-bottom: $distance-normal;
+}
+
+.p-top {
+  padding-top: $distance-normal;
+}
+
+.m-right-smallest {
+  margin-right: $distance-smallest;
+}
+
+.m-top {
+  margin-top: $distance-normal;
+}
+
+.m-top-big {
+  margin-top: $distance-big;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.halfTransparent {
+  @include opacity(0.5);
+}

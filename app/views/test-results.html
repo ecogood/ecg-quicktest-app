@@ -1,6 +1,18 @@
-<p>
-  Test results. You reached {{points}} from {{maxPoints}} ECG points.
-</p>
-<p ng-repeat="p in t.structure.result.feedback[level].content">
-  {{p}}
-</p>
+<div class="row result-company-name-container">
+  <h2>{{companyName}}</h2>
+</div>
+
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <div class="progress vertical bottom progress-vertical-ecg">
+      <div class="progress-bar ecg-level-{{level}}-bg-text " role="progressbar" data-transitiongoal="{{percentage}}" progressbar></div>
+    </div>
+  </div>
+
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 resultFeedbackText">
+    <p ng-repeat="p in t.structure.result.feedback[level].content">
+      {{p}}
+    </p>
+  </div>
+
+</div>

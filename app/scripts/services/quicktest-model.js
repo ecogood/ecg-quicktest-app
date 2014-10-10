@@ -109,6 +109,91 @@ QuickTest41.prototype.getSkipQuestions = function() {
   return this.skipQuestions;
 };
 
+/**
+ * Returns the previous question number for the given question number,
+ * taking into account the participant type
+ * @param questionNumber
+ * @return {int|null} - the previous question number taking into account skipQuestions or
+ * <code>null</code> if the given argument is not a number or <=0
+ */
+QuickTest41.prototype.getPrevQuestion = function(questionNumber) {
+  if (typeof questionNumber !== 'number' || questionNumber <= 0) {
+    return null;
+  }
+  if (this.getParticipantType() === this.getAllowedParticipantTypes()[0]) {
+    // company
+    if (questionNumber > this.getQuestionsCount()) {
+      return this.getQuestionsCount();
+    } else {
+      return questionNumber - 1;
+    }
+
+  } else if (this.getParticipantType() === this.getAllowedParticipantTypes()[1]) {
+    // self-employed
+    var skipQuestions = this.getSkipQuestions();
+
+    if (skipQuestions.indexOf(questionNumber - 1) !== -1) {
+      // the previous question is skipped, then recurse-call the previous of the previous one
+      return this.getPrevQuestion(questionNumber - 1);
+    }
+    else if (questionNumber === this.getQuestionsCount() ||
+        questionNumber === this.getQuestionsCount() + 1) {
+      return this.getQuestionsCount();
+    }
+    else if (questionNumber > this.getQuestionsCount() + 1) {
+      return this.getPrevQuestion(this.getQuestionsCount() +1);
+    }
+    else {
+      return questionNumber - 1;
+    }
+
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns the next question number for the given question number,
+ * taking into account the participant type
+ * @param questionNumber
+ * @return {int|null} - the next question number taking into account skipQuestions or
+ * <code>null</code> if the given argument is not a number or bigger than the question count.
+ */
+QuickTest41.prototype.getNextQuestion = function(questionNumber) {
+  if (typeof questionNumber !== 'number' || questionNumber >= this.getQuestionsCount()) {
+    return null;
+  }
+  if (this.getParticipantType() === this.getAllowedParticipantTypes()[0]) {
+    // company
+    if (questionNumber < 0) {
+      return 0;
+    } else {
+      return questionNumber + 1;
+    }
+
+  } else if (this.getParticipantType() === this.getAllowedParticipantTypes()[1]) {
+    // self-employed
+    var skipQuestions = this.getSkipQuestions();
+
+    if (skipQuestions.indexOf(questionNumber + 1) !== -1) {
+      // the next question is skipped, then return the next of the next one
+      return this.getNextQuestion(questionNumber + 1);
+    }
+    else if (questionNumber === -1) {
+      return 0;
+    }
+    else if (questionNumber < -1) {
+      return this.getNextQuestion(-1);
+    }
+    else {
+      return questionNumber + 1;
+    }
+
+  } else {
+    return null;
+  }
+};
+
 QuickTest41.prototype.getResult = function() {
 
   var that = this;
@@ -118,14 +203,14 @@ QuickTest41.prototype.getResult = function() {
   var answersSum = this.answers.reduce(function(prev, cur, index) {
 
     // if 'self-employed' skip irrelevant questions
-    if (isSelfEmployed && that.skipQuestions.indexOf(index+1) !== -1) {
+    if (isSelfEmployed && that.getSkipQuestions().indexOf(index + 1) !== -1) {
       return prev;
 
     } else {
       var curValue = cur;
 
       // double the value of important questions
-      if (that.doubleValueQuestionNumbers.indexOf(index+1) !== -1) {
+      if (that.doubleValueQuestionNumbers.indexOf(index + 1) !== -1) {
         curValue = curValue * 2;
       }
       return prev + curValue;

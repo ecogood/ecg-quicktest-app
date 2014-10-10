@@ -10,32 +10,44 @@
 angular.module('ecgQuicktestApp')
   .controller('TestQuestionsCtrl', function($scope, $routeParams, $location) {
 
+    var test = $scope.$parent.test;
+    var questionNumber = parseInt($routeParams.questionNumber);
+
     // ensure test is started
-    if (typeof $scope.$parent.test === 'undefined') {
+    if (typeof test === 'undefined' || typeof questionNumber !== 'number') {
       $location.path('/');
-    } else {
+    }
+    else {
 
-      $scope.test = $scope.$parent.test;
-
-      $scope.questionNumber = parseInt($routeParams.questionNumber);
+      $scope.test = test;
+      $scope.companyName = $scope.test.getParticipant().name;
+      $scope.questionNumber = questionNumber;
       $scope.question = $scope.t.test.questions[$scope.questionNumber - 1];
+
+      $scope.goToPrevQuestion = function() {
+        var prevQuestion = $scope.test.getPrevQuestion($scope.questionNumber);
+        if (prevQuestion !== null) {
+          $location.path('question/' + prevQuestion);
+        } else {
+          // there is no previous question, stay here
+        }
+      };
+
+      $scope.goToNextQuestion = function() {
+        var nextQuestion = $scope.test.getNextQuestion($scope.questionNumber);
+        if (nextQuestion !== null) {
+          $location.path('question/' + nextQuestion);
+        } else {
+          // there is no next question, go to results
+          $location.path('results');
+        }
+      };
 
       $scope.answerClicked = function(answerValue) {
         $scope.test.setAnswer($scope.questionNumber, answerValue);
-        $scope.goToQuestion($scope.questionNumber + 1);
+        $scope.goToNextQuestion();
       };
 
-      $scope.goToQuestion = function(questionNumber) {
-        if (typeof questionNumber !== 'number') {
-          $location.path('/');
-        }
-        else if ($scope.test.getQuestionsCount() + 1 === questionNumber) {
-          // last question was answered
-          $location.path('results');
-
-        } else {
-          $location.path('test/' + questionNumber);
-        }
-      };
     }
+
   });
