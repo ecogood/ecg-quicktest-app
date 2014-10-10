@@ -4645,6 +4645,16 @@ svg circle {
   background-color: #c4c287;
   border-color: #c4c287; }
 
+.btn-ecg-turquoise {
+  background-color: #009999;
+  border-color: #009999;
+  color: #FFFFFF; }
+
+.btn-ecg-turquoise:hover, .btn-ecg-turquoise.active {
+  background-color: #00807d;
+  border-color: #00807d;
+  color: #FFFFFF; }
+
 .btn-ecg-level-white-color-hover, .btn-ecg-level-0:hover, .btn-ecg-level-0.active, .btn-ecg-level-1:hover, .btn-ecg-level-1.active {
   border-color: #d8d8d8;
   color: #FFFFFF; }
@@ -4774,6 +4784,9 @@ body {
   float: right !important;
   width: 50px !important;
   height: 150px !important; }
+
+.progress-bar {
+  font-size: 16px !important; }
 
 .resultFeedbackText {
   font-size: 1.5rem; }
