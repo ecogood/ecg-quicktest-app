@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         files: ['<%= dir.scripts %>/services/quicktest-model-base.js'],
         tasks: ['browserify']
       },
-      sass : {
+      sass: {
         files: ['<%= dir.styles %>/sass/**.scss'],
         tasks: ['sass'],
         options: {
@@ -253,25 +253,25 @@ module.exports = function(grunt) {
 //    minification. These next options are pre-configured if you do not wish
 //    to use the Usemin blocks.
     cssmin: {
-       dist: {
-         files: {
-           '<%= yeoman.dist %>/styles/main.css': [
-             '<%= yeoman.app %>/styles/css/{,*/}*.css'
-           ]
-         }
-       }
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/styles/main.css': [
+            '<%= yeoman.app %>/styles/css/{,*/}*.css'
+          ]
+        }
+      }
     },
     uglify: {
-       dist: {
-         files: {
-           '<%= yeoman.dist %>/scripts/scripts.js': [
-             '<%= yeoman.app %>/scripts/scripts.js'
-           ]
-         }
-       }
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/scripts/scripts.js': [
+            '<%= yeoman.app %>/scripts/scripts.js'
+          ]
+        }
+      }
     },
     concat: {
-       dist: {}
+      dist: {}
     },
 
     imagemin: {
@@ -445,6 +445,13 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
 
   });
@@ -509,6 +516,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('browser', [
     'browserify'
+  ]);
+
+  grunt.registerTask('ghpages', [
+    'gh-pages'
   ]);
 
 };
