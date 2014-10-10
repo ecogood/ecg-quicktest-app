@@ -61,6 +61,12 @@ body {
 
 .question-data-form {
   max-width: 300px;
+  font-size: $font-size-bigger;
+
+  input,
+  select {
+    font-size: $font-size-big;
+  }
 }
 
 .questionNav-container {
@@ -76,7 +82,7 @@ body {
 .questionText {
   padding: 20px 0;
   min-height: 11em;
-  font-size: $question-font-size;
+  font-size: $font-size-big;
 }
 
 .result-company-name-container {
@@ -100,7 +106,7 @@ body {
 }
 
 .resultFeedbackText {
-  font-size: $question-font-size;
+  font-size: $font-size-big;
 }
 
 /* Custom page footer */
