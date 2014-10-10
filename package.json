@@ -35,6 +35,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-filerev": "^0.2.1",
     "grunt-files-to-javascript-variables": "^0.2.4",
+    "grunt-gh-pages": "^0.9.1",
     "grunt-google-cdn": "^0.4.0",
     "grunt-json-merge": "^0.2.2",
     "grunt-karma": "^0.9.0",
