@@ -11,7 +11,7 @@ module.exports = function(config) {
     autoWatch: true,
 
     // base path, that will be used to resolve files and exclude
-    basePath: '../',
+    basePath: '../../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
@@ -28,8 +28,7 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/unit/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
