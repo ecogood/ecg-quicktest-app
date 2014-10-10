@@ -14,7 +14,7 @@
     "app"
   ],
   "dependencies": {
-    "ecg-quicktest-model": "^0.0.4",
+    "ecg-quicktest-model": "^0.0.7",
     "ecg-quicktest-texts": "^0.0.6"
   },
   "devDependencies": {

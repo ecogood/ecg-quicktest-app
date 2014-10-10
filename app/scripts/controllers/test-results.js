@@ -16,6 +16,7 @@ angular.module('ecgQuicktestApp')
     } else {
 
       $scope.test = $scope.$parent.test;
+      $scope.$parent.testProgress = $scope.test.getPercentageFinished();
       $scope.companyName = $scope.test.getParticipant().name;
 
       var result = $scope.test.getResult();

@@ -4745,13 +4745,15 @@ body {
   padding-right: 15px; }
 
 /* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5; }
-
 .header-title {
   font-size: 3em;
   padding: 20px 0px 10px 0px;
   color: #009999; }
+
+.progress-test {
+  height: 2px !important; }
+  .progress-test .progress-bar {
+    background-color: #b5eeee !important; }
 
 .readMore-container {
   padding-bottom: 20px; }
@@ -4819,15 +4821,12 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
-  /* Space out the masthead */
   /* Remove the bottom border on the jumbotron for visual effect */
   .container {
     max-width: 730px; }
   .header, .marketing, .footer {
     padding-left: 0;
     padding-right: 0; }
-  .header {
-    margin-bottom: 30px; }
   .jumbotron {
     border-bottom: 0; } }
 

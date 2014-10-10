@@ -38,13 +38,21 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+//  border-bottom: 1px solid #e5e5e5;
 }
 
 .header-title {
   font-size: 3em;
   padding: 20px 0px 10px 0px;
   color: $ecg-turquoise-color-dark;
+}
+
+.progress-test {
+  height: 2px !important;
+
+  .progress-bar {
+    background-color: $ecg-turquoise-color-light !important;
+  }
 }
 
 .readMore-container {
@@ -145,10 +153,6 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

@@ -227,7 +227,7 @@ QuickTest41.prototype.getResult = function() {
   }
 
   // set result percentage
-  var resultPercentage = Number(resultPoints / this.getMaxPoints()).toFixed(2) * 100;
+  var resultPercentage = Math.floor(Number(resultPoints / this.getMaxPoints()).toFixed(2) * 100);
 
   // set result level
   var resultLevel = 0;
@@ -350,17 +350,24 @@ QuickTestAbstractModel.prototype.getAnswer = function(questionNumber) {
 };
 
 QuickTestAbstractModel.prototype.getAnswersCount = function() {
-  //TODO
+  var that = this;
   var answersCount = 0;
-  this.answers.forEach(function(answer) {
-    answersCount++;
+  Object.keys(this.answers).forEach(function(index) {
+    if (that.getParticipantType() === that.getAllowedParticipantTypes()[1] &&
+      that.getSkipQuestions().indexOf(index) !== -1) {
+      // self-employed and skip question
+    }
+    else {
+      answersCount++;
+    }
   });
   return answersCount;
 };
 
 QuickTestAbstractModel.prototype.getPercentageFinished = function() {
-  // TODO
-  return 0;
+  var answeredQuestions = this.getAnswersCount();
+  var participantQuestionsCount = this.getParticipantQuestionsCount();
+  return Math.floor(((Number(answeredQuestions / participantQuestionsCount)) * 100).toFixed(2));
 };
 
 module.exports = QuickTestAbstractModel;
