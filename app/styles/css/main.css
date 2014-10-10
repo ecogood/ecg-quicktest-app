@@ -4601,8 +4601,15 @@ SVG Icons - svgicons.sparkk.fr
 svg path, svg polygon, svg rect {
   fill: #99CCCC; }
 
+.svg-hover:hover svg path, .svg-hover:hover svg polygon, .svg-hover:hover svg rect {
+  fill: #009999; }
+
 svg circle {
   stroke: #99CCCC;
+  stroke-width: 1; }
+
+.svg-hover:hover svg circle {
+  stroke: #009999;
   stroke-width: 1; }
 
 /* ECG Colors */

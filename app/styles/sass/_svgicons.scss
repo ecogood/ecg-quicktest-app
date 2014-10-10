@@ -8,6 +8,7 @@ SVG Icons - svgicons.sparkk.fr
   height: 2em;
   vertical-align: middle;
 }
+
 .svg-icon20 {
   width: 20px;
   height: 20px;
@@ -20,7 +21,18 @@ svg rect {
   fill: $ecg-turquoise-color;
 }
 
+.svg-hover:hover svg path,
+.svg-hover:hover svg polygon,
+.svg-hover:hover svg rect {
+  fill: $ecg-turquoise-color-dark;
+}
+
 svg circle {
   stroke: $ecg-turquoise-color;
+  stroke-width: 1;
+}
+
+.svg-hover:hover svg circle {
+  stroke: $ecg-turquoise-color-dark;
   stroke-width: 1;
 }
