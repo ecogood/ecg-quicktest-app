@@ -4588,9 +4588,14 @@ SVG Icons - svgicons.sparkk.fr
 /* ECG Colors */
 /* Fonts */
 /* RESPONSIVE VARIABLES */
-svg {
+.svg-icon {
   width: 3em;
   height: 2em;
+  vertical-align: middle; }
+
+.svg-icon20 {
+  width: 20px;
+  height: 20px;
   vertical-align: middle; }
 
 svg path, svg polygon, svg rect {
