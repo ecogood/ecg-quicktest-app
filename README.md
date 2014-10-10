@@ -3,6 +3,9 @@ ECG quick test App
 
 This the the online version of the quick test of the Economy for the Common Good.
 
+### Build Status
+[![Build Status](https://travis-ci.org/ecogood/ecg-quicktest-app.svg?branch=master)](https://travis-ci.org/ecogood/ecg-quicktest-app)
+
 ## Demo
 
 http://ecogood.github.io/ecg-quicktest-app/
