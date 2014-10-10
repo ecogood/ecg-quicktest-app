@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
     scripts: 'app/scripts',
+    scriptsSrc: 'app/scripts-src',
     styles: 'app/styles'
   };
 
@@ -51,11 +52,14 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       texts: {
-        files: ['<%= yeoman.app %>/scripts/i18n/*.json'],
+        files: [
+          '<%= dir.scriptsSrc %>/i18n/*.json',
+          '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js'
+        ],
         tasks: ['json_merge', 'filesToJavascript']
       },
       browserifyQuicktestModel: {
-        files: ['<%= dir.scripts %>/services/quicktest-model-base.js'],
+        files: ['<%= dir.scriptsSrc %>/services/quicktest-model-base.js'],
         tasks: ['browserify']
       },
       sass: {
@@ -139,7 +143,8 @@ module.exports = function(grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          '<%= dir.scripts %>/{,*/}*.js',
+          '<%= dir.scriptsSrc %>/{,*/}*.js'
         ]
       },
       test: {
@@ -410,7 +415,7 @@ module.exports = function(grunt) {
       englishFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
-            '<%= dir.scripts %>/i18n/*en.json',
+            '<%= dir.scriptsSrc %>/i18n/*en.json',
             'node_modules/ecg-quicktest-texts/data/*en.json'
           ]
         }
@@ -418,7 +423,7 @@ module.exports = function(grunt) {
       germanFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
-            '<%= dir.scripts %>/i18n/*de.json',
+            '<%= dir.scriptsSrc %>/i18n/*de.json',
             'node_modules/ecg-quicktest-texts/data/*de.json'
           ]
         }
@@ -432,9 +437,9 @@ module.exports = function(grunt) {
           inputFilesFolder: '<%= dir.scripts %>/i18n/generated',
           inputFilePrefix: 'generated-texts.',
           inputFileExtension: 'json',
-          outputBaseFile: 'app/scripts/services/quicktest-texts-base.js',
+          outputBaseFile: '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js',
           outputBaseFileVariable: 'ecgQuicktestTexts',
-          outputFile: 'app/scripts/services/quicktest-texts.js'
+          outputFile: '<%= dir.scripts %>/services/generated/quicktest-texts.js'
         }
       }
     },
@@ -442,8 +447,8 @@ module.exports = function(grunt) {
     browserify: {
       quicktestModel: {
         files: {
-          '<%= dir.scripts %>/services/quicktest-model.js': [
-            '<%= dir.scripts %>/services/quicktest-model-base.js'
+          '<%= dir.scripts %>/services/generated/quicktest-model.js': [
+            '<%= dir.scriptsSrc %>/services/quicktest-model-base.js'
           ]
         }
       }
@@ -468,17 +473,13 @@ module.exports = function(grunt) {
       'clean:server',
       'json_merge',
       'filesToJavascript',
+      'browserify',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function(target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
@@ -512,6 +513,10 @@ module.exports = function(grunt) {
     'build'
   ]);
 
+  grunt.registerTask('hint', [
+    'jshint'
+  ]);
+
   grunt.registerTask('convertTexts', [
     'json_merge', 'filesToJavascript'
   ]);
@@ -522,6 +527,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('ghpages', [
     'gh-pages'
+  ]);
+
+  grunt.registerTask('buildghpages', [
+    'build', 'gh-pages'
   ]);
 
 };
