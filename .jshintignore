@@ -1,4 +1,5 @@
 app/scripts/vendor/**
+app/scripts/directives/bootstrap-progressbar.js
 app/scripts/services/quicktest-texts.js
 app/scripts/services/quicktest-model.js
 Gruntfile.js

@@ -1,10 +1,15 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
+//noinspection CssUnknownTarget
+@import "vendor/_bootstrap.scss";
+//noinspection CssUnknownTarget
 @import "variables";
+//noinspection CssUnknownTarget
 @import "svgicons";
+//noinspection CssUnknownTarget
 @import "general";
+//noinspection CssUnknownTarget
+@import "ecg-buttons";
+//noinspection CssUnknownTarget
+@import "ecg-levels";
 
 body {
   color: $grey-color;
@@ -39,24 +44,66 @@ body {
 .header-title {
   font-size: 3em;
   padding: 20px 0px 10px 0px;
-  color: $ecg-turquoise-dark-color;
+  color: $ecg-turquoise-color-dark;
 }
 
 .readMore-container {
   padding-bottom: 20px;
 }
 
-.questionText {
-  padding: 20px 0;
-  height: 10em;
+.question-data-form {
+  max-width: 300px;
 }
 
+.questionNav-container {
+  height: 5rem;
+}
+
+.questionIndicator {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $ecg-olive-color;
+}
+
+.questionText {
+  padding: 20px 0;
+  min-height: 11em;
+  font-size: $question-font-size;
+}
+
+.result-company-name-container {
+  padding-bottom: $distance-small;
+  text-align: center;
+
+  h2 {
+    margin-top: 5px;
+    color: $grey-color;
+  }
+}
+
+.progress-vertical-ecg {
+  float: right !important;
+  width: 50px !important;
+  height: 150px !important;
+}
+
+.resultFeedbackText {
+  font-size: $question-font-size;
+}
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top: 20rem;
+  color: #E0E0E0;
+
+  a {
+    color: $ecg-turquoise-color;
+  }
+
+  a:hover {
+    color: $ecg-turquoise-color-dark;
+  }
 }
 
 .container-narrow > hr {
@@ -103,5 +150,17 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+@media (min-width: 0px) and (max-width: $screen-xs-min) {
+  .questionText {
+    min-height: 12em;
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-md) {
+  .questionText {
+    min-height: 11em;
   }
 }

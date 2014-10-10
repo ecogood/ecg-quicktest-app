@@ -6,6 +6,8 @@
     "CompanyName": "Unternehmensname",
     "AreYouSelfEmployed": "Sind Sie EinzelunternehmerIn?",
     "Yes": "Ja",
-    "No": "No"
+    "No": "Nein",
+    "PreviousQuestion": "Vorherige Frage",
+    "NextQuestion": "Nächste Frage"
   }
 }

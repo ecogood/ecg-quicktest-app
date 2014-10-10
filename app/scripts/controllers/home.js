@@ -27,6 +27,6 @@ angular.module('ecgQuicktestApp')
       test.setParticipantType($scope.participantType);
       test.getParticipant().name = $scope.participantName;
       $scope.$parent.test = test;
-      $location.path('test/1');
+      $location.path('question/1');
     };
   });

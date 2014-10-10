@@ -25,7 +25,7 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/test/:questionNumber', {
+      .when('/question/:questionNumber', {
         templateUrl: 'views/test-questions.html',
         controller: 'TestQuestionsCtrl'
       })

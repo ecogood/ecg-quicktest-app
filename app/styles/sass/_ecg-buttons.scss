@@ -1,0 +1,86 @@
+@import "variables";
+
+$btn-lighten-percentage: 0.90;
+$btn-darken-percentage: 5;
+
+.btn-ecg {
+  background-color: $ecg-olive-color;
+  border-color: $ecg-olive-color;
+  color: #FFFFFF;
+}
+
+.btn-ecg:hover,
+.btn-ecg.active {
+  background-color: darken($ecg-olive-color, $btn-darken-percentage);
+  border-color: darken($ecg-olive-color, $btn-darken-percentage);
+}
+
+.btn-ecg-level-white-color-hover {
+  border-color: darken($grey-light-border, $btn-darken-percentage);
+  color: $white;
+}
+
+.btn-ecg-level-dark-color {
+  border-color: $grey-light-border;
+  color: $grey-dark;
+}
+
+.btn-ecg-level-dark-color-hover {
+  border-color: darken($grey-light-border, $btn-darken-percentage);
+  color: $grey-dark;
+}
+
+.btn-ecg-level-0 {
+  @extend .btn-ecg-level-dark-color;
+  background-color: transparentize($negative-color, $btn-lighten-percentage);
+}
+
+.btn-ecg-level-0:hover,
+.btn-ecg-level-0.active {
+  @extend .btn-ecg-level-white-color-hover;
+  background-color: $negative-color;
+}
+
+.btn-ecg-level-1 {
+  @extend .btn-ecg-level-dark-color;
+  background-color: transparentize($basic-level-color, $btn-lighten-percentage);
+}
+
+.btn-ecg-level-1:hover,
+.btn-ecg-level-1.active {
+  @extend .btn-ecg-level-white-color-hover;
+  background-color: $basic-level-color;
+}
+
+.btn-ecg-level-2 {
+  @extend .btn-ecg-level-dark-color;
+  background-color: transparentize($advanced-level-color, $btn-lighten-percentage);
+}
+
+.btn-ecg-level-2:hover,
+.btn-ecg-level-2.active {
+  @extend .btn-ecg-level-dark-color-hover;
+  background-color: $advanced-level-color;
+}
+
+.btn-ecg-level-3 {
+  @extend .btn-ecg-level-dark-color;
+  background-color: transparentize($experienced-level-color, $btn-lighten-percentage);
+}
+
+.btn-ecg-level-3:hover,
+.btn-ecg-level-3.active {
+  @extend .btn-ecg-level-dark-color-hover;
+  background-color: $experienced-level-color;
+}
+
+.btn-ecg-level-4 {
+  @extend .btn-ecg-level-dark-color;
+  background-color: transparentize($model-level-color, $btn-lighten-percentage);
+}
+
+.btn-ecg-level-4:hover,
+.btn-ecg-level-4.active {
+  @extend .btn-ecg-level-dark-color-hover;
+  background-color: $model-level-color;
+}
