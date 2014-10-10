@@ -1,4 +1,4 @@
-ECG quick test App
+ECG Quick Test App
 ==================
 
 This the the web version of the quick test of the Economy for the Common Good. You can also [use it offline](#use-offline).
