@@ -1,12 +1,17 @@
-exports.config = {
-  capabilities: {
-    'browserName': 'chrome'
-  },
-  chromeOnly: true,
-  specs: ['test/e2e/**/*.js'],
+'use strict';
 
-  jasmineNodeOpts: {
-    showColors: true
-  },
-  framework: 'jasmine'
+
+exports.config = {
+
+  specs: ['spec/**/*.js'],
+
+  baseUrl: 'http://localhost:9000/',
+  rootElement: 'html',
+
+  multiCapabilities: [
+    {
+      browserName: 'chrome'
+    }
+  ]
+
 };

@@ -21,7 +21,8 @@ module.exports = function(grunt) {
     dist: 'dist',
     scripts: 'app/scripts',
     scriptsSrc: 'app/scripts-src',
-    styles: 'app/styles'
+    styles: 'app/styles',
+    e2e: 'test/e2e'
   };
 
   // Define the configuration for all the tasks
@@ -411,6 +412,23 @@ module.exports = function(grunt) {
       }
     },
 
+    protractor: {
+      options: {
+        configFile: "node_modules/protractor/referenceConf.js", // Default config file
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
+        args: {
+          // Arguments passed to the command
+        }
+      },
+      e2eQuickTest: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+        options: {
+          configFile: "<%= dir.e2e %>/protractor.conf.js", // Target-specific config file
+          args: {} // Target-specific arguments
+        }
+      }
+    },
+
     json_merge: {
       englishFiles: {
         files: {
@@ -487,7 +505,8 @@ module.exports = function(grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma',
+    'protractor'
   ]);
 
   grunt.registerTask('build', [
