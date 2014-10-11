@@ -23,25 +23,24 @@ npm install --save ecg-quicktest-app
 
 ## Tests
 
-Test for this app are not yet written.
-The two modules (ecg-quicktest-model and ecg-quicktest-texts) used are fully tested. 
-
 ### View the tests
 
-[Open the tests]()
+[Open the tests](test/e2e/spec/quicktest-process.spec.js)
 
 ### Run the tests
 
-``npm test``
-
-for e2e Testing:
+Install the Browsers for e2e testing:
 
 ``./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update``
+
+start the tests:
+
+``npm test``
 
 ## Roadmap
 
 * :white_check_mark: Create first working version in AngularJS with previous and next buttons, state of given answers and progressbar.
-* Add Tests
+* :white_check_mark: Add Tests
 * Add English translation
 
 ## Contributing
