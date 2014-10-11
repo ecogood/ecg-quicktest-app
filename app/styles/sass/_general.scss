@@ -8,8 +8,16 @@ $distance-big: $distance-normal * 2;
 //noinspection CssUnknownTarget
 @import "mixins";
 
+/* Remove Firefox outlines on links and selects */
 a, a:hover, a:active, a:focus {
    outline: 0;
+}
+@-moz-document url-prefix() {
+    select, select:-moz-focusring, select::-moz-focus-inner {
+       color: transparent !important;
+       text-shadow: 0 0 0 #000 !important;
+       background-image: none !important;
+    }
 }
 
 /* Layout */
