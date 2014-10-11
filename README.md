@@ -19,7 +19,7 @@ http://ecogood.github.io/ecg-quicktest-app/
 
 The Software Architecture is modular and server/client decoupled. 
 
-It consist of 3 npm packages:
+It consists of 3 npm packages:
 
 - [ecg-quicktest-texts](https://github.com/ecogood/ecg-quicktest-texts) - translations of the quick test.
 - [ecg-quicktest-model](https://github.com/ecogood/ecg-quicktest-model) - JavaScript model of the quick test. Create test, get/set answers, get results, etc.
