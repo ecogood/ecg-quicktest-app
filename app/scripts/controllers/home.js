@@ -14,7 +14,7 @@ angular.module('ecgQuicktestApp')
     $scope.readMore = false;
 
     $scope.participantType = 'company';
-    $scope.isSelfEmployed = false;
+    $scope.isSelfEmployed = 'false';
     $scope.setSelfEmployed = function() {
       if ($scope.isSelfEmployed === 'true') {
         $scope.participantType = 'self-employed';
