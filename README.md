@@ -15,13 +15,25 @@ http://ecogood.github.io/ecg-quicktest-app/
 * [Download the quick test](https://github.com/ecogood/ecg-quicktest-app/archive/gh-pages.zip)
 * Unzip and open ``index.html``
 
-## Installation
+## Software Architecture
 
-```
-npm install --save ecg-quicktest-app
-```
+The Software Architecture is modular and server/client decoupled. 
+
+It consist of 3 npm packages:
+
+- [ecg-quicktest-texts](https://github.com/ecogood/ecg-quicktest-texts) - translations of the quick test.
+- [ecg-quicktest-model](https://github.com/ecogood/ecg-quicktest-model) - JavaScript model of the quick test. Create test, get/set answers, get results, etc.
+- [ecg-quicktest-app](https://github.com/ecogood/ecg-quicktest-app) - AngularJS frontend of the quick test. This package uses the two packages above.
+
+The texts and model packages can be installed via [npm](https://www.npmjs.org/search?q=ecg%20quicktest) 
+and used in any JavaScript application, like on the server with Node.js, in a mobile app, or any web application. 
+
+The packages are unit tested with [Mocha](http://visionmedia.github.io/mocha/) and [Chai](http://chaijs.com/) 
+and end-to-end tested with [Protractor](http://angular.github.io/protractor/).
 
 ## Tests
+
+Uses Protractor for E2E Testing.
 
 ### View the tests
 
