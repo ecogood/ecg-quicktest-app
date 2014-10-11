@@ -34,6 +34,10 @@ The two modules (ecg-quicktest-model and ecg-quicktest-texts) used are fully tes
 
 ``npm test``
 
+for e2e Testing:
+
+``./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update``
+
 ## Roadmap
 
 * :white_check_mark: Create first working version in AngularJS with previous and next buttons, state of given answers and progressbar.
@@ -58,4 +62,5 @@ Share issues and desired features [in GitHub](https://github.com/ecogood/ecg-qui
 
 ## Release History
 
+* 0.1.1 - add E2E Tests
 * 0.1.0 - create first working version in AngularJS with previous and next buttons, state of given answers and progressbar.

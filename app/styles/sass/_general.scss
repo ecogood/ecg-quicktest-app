@@ -49,3 +49,7 @@ a, a:hover, a:active, a:focus {
 .halfTransparent {
   @include opacity(0.5);
 }
+
+.color-transparent {
+  color: transparent;
+}
