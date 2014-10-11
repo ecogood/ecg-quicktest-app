@@ -10,9 +10,9 @@
  */
 angular
   .module('ecgQuicktestApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
+//    'ngAnimate',
+//    'ngCookies',
+//    'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
