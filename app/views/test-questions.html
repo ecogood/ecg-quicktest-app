@@ -3,7 +3,7 @@
 </div>
 
 <div class="row questionNav-container">
-  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
     <a ng-show="questionNumber > 1" href="" ng-click="goToPrevQuestion()"
         title="{{t.app.PreviousQuestion}}">
       <svg class="svg-icon" viewBox="0 0 20 20">
@@ -16,12 +16,12 @@
     </a>
   </div>
 
-  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 questionIndicator">
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8 questionIndicator">
     {{question.stakeholders}}{{question.ecgValue}} -
     {{question.indicatorTitle}}
   </div>
 
-  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
     <a href="" ng-click="goToNextQuestion()" class="pull-right"
         title="{{t.app.NextQuestion}}">
       <svg class="svg-icon" viewBox="0 0 20 20">
@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="questionText">
+<div class="questionText clear-both">
   <p>{{question.text}}</p>
 </div>
 

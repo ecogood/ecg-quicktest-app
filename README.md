@@ -10,6 +10,8 @@ This the the web version of the quick test of the Economy for the Common Good. Y
 
 http://ecogood.github.io/ecg-quicktest-app/
 
+Works on desktop, tablet and phones.
+
 ### Use offline
 
 * [Download the quick test](https://github.com/ecogood/ecg-quicktest-app/archive/gh-pages.zip)
@@ -73,5 +75,6 @@ Share issues and desired features [in GitHub](https://github.com/ecogood/ecg-qui
 
 ## Release History
 
+* 0.1.2 - fix layout on mobile phones.
 * 0.1.1 - add E2E Tests
 * 0.1.0 - create first working version in AngularJS with previous and next buttons, state of given answers and progressbar.
