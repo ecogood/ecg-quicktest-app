@@ -1,11 +1,10 @@
 <div class="text-center">
 
-  <p class="lead">
-    {{t.introduction.pitch}}
+  <p class="lead" ng-bind="t.introduction.pitch">
   </p>
 
   <div class="readMore-container">
-    <a ng-click="readMore=!readMore" href="">{{t.app.readMore}}</a>
+    <a ng-click="readMore=!readMore" href="" ng-bind="t.app.readMore"></a>
 
     <div ng-show="readMore" class="p-top">
       <p ng-repeat="content in t.introduction.content" ng-bind-html="content">
@@ -15,21 +14,21 @@
 
   <form role="form" class="question-data-form center-block">
     <div class="form-group">
-      <label for="participantName">{{t.app.CompanyName}}</label>
+      <label for="participantName" ng-bind="t.app.CompanyName"></label>
       <input type="text" class="form-control" id="participantName"
              ng-model="participantName">
     </div>
     <div class="form-group">
-      <label for="selfEmplyoed">{{t.app.AreYouSelfEmployed}}</label>
+      <label for="selfEmplyoed" ng-bind="t.app.AreYouSelfEmployed"></label>
       <select name="selfEmplyoed" id="selfEmplyoed" class="form-control"
               ng-model="isSelfEmployed" ng-change="setSelfEmployed()">
-        <option value="false">{{t.app.No}}</option>
-        <option value="true">{{t.app.Yes}}</option>
+        <option value="false" ng-bind="t.app.No"></option>
+        <option value="true" ng-bind="t.app.Yes"></option>
       </select>
     </div>
 
-    <a id="btn-start-test" ng-click="startTest()" href="" class="btn btn-lg btn-ecg-turquoise m-top-big">
-      {{t.app.startTest}}
+    <a id="btn-start-test" ng-click="startTest()" ng-bind="t.app.startTest"
+       href="" class="btn btn-lg btn-ecg-turquoise m-top-big">
       <svg class="svg-icon" viewBox="0 0 20 20">
         <path d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
                     l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
