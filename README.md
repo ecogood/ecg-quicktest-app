@@ -75,6 +75,7 @@ Share issues and desired features [in GitHub](https://github.com/ecogood/ecg-qui
 
 ## Release History
 
+* 0.1.3 - remove double sentence, set German as default lang, fix movement of buttons and set bower dependencies to angular 1.2.0.
 * 0.1.2 - fix layout on mobile phones.
 * 0.1.1 - add E2E Tests
 * 0.1.0 - create first working version in AngularJS with previous and next buttons, state of given answers and progressbar.
