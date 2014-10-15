@@ -17,7 +17,7 @@ angular.module('ecgQuicktestApp')
       $scope.lang = langShort;
       $scope.t = ecgQuicktestTexts[langShort];
     }
-    refresh(locale.getLocale());
+    refresh('de'); // locale.getLocale()
 
     $scope.setLocale = locale.setLocale;
     $scope.$on(localeEvents.localeChanges, function(event, locale) {
