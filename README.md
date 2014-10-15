@@ -1,10 +1,7 @@
-ECG Quick Test App
+ECG Quick Test App [![Build Status](https://travis-ci.org/ecogood/ecg-quicktest-app.svg?branch=master)](https://travis-ci.org/ecogood/ecg-quicktest-app)
 ==================
 
 This the the web version of the quick test of the Economy for the Common Good. You can also [use it offline](#use-offline).
-
-### Build Status
-[![Build Status](https://travis-ci.org/ecogood/ecg-quicktest-app.svg?branch=master)](https://travis-ci.org/ecogood/ecg-quicktest-app)
 
 ## Demo
 
