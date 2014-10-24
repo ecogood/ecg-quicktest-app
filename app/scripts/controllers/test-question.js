@@ -15,7 +15,7 @@ angular.module('ecgQuicktestApp')
 
     // ensure test is started
     if (typeof test === 'undefined' || typeof questionNumber !== 'number') {
-      $state.go('quicktest');
+      $state.go('ecgQuicktest');
     }
     else {
 
@@ -28,7 +28,7 @@ angular.module('ecgQuicktestApp')
       $scope.goToPrevQuestion = function() {
         var prevQuestion = $scope.test.getPrevQuestion($scope.questionNumber);
         if (prevQuestion !== null) {
-          $state.go('quicktestQuestion', {questionNumber: prevQuestion});
+          $state.go('ecgQuicktestQuestion', {questionNumber: prevQuestion});
         } else {
           // there is no previous question, stay here
         }
@@ -37,10 +37,10 @@ angular.module('ecgQuicktestApp')
       $scope.goToNextQuestion = function() {
         var nextQuestion = $scope.test.getNextQuestion($scope.questionNumber);
         if (nextQuestion !== null) {
-          $state.go('quicktestQuestion', {questionNumber: nextQuestion});
+          $state.go('ecgQuicktestQuestion', {questionNumber: nextQuestion});
         } else {
           // there is no next question, go to results
-          $state.go('quicktestResults');
+          $state.go('ecgQuicktestResults');
         }
       };
 
