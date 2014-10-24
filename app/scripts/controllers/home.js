@@ -28,6 +28,6 @@ angular.module('ecgQuicktestApp')
       test.setParticipantType($scope.participantType);
       test.getParticipant().name = $scope.participantName;
       $scope.$parent.test = test;
-      $state.go('quicktestQuestion', {questionNumber: 1});
+      $state.go('ecgQuicktestQuestion', {questionNumber: 1});
     };
   });

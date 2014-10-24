@@ -23,17 +23,17 @@ angular
   .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('quicktest', {
+      .state('ecgQuicktest', {
         url: '/',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .state('quicktestQuestion', {
+      .state('ecgQuicktestQuestion', {
         url: '/question/:questionNumber',
         templateUrl: 'views/test-questions.html',
         controller: 'TestQuestionsCtrl'
       })
-      .state('quicktestResults', {
+      .state('ecgQuicktestResults', {
         url: '/results',
         templateUrl: 'views/test-results.html',
         controller: 'TestResultsCtrl'

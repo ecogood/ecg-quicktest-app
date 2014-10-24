@@ -12,7 +12,7 @@ angular.module('ecgQuicktestApp')
 
     // ensure test is started
     if (typeof $scope.$parent.test === 'undefined') {
-      $state.go('quicktest');
+      $state.go('ecgQuicktest');
     } else {
 
       $scope.test = $scope.$parent.test;
