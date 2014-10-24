@@ -8,11 +8,11 @@
  * Controller of ...
  */
 angular.module('ecgQuicktestApp')
-  .controller('TestResultsCtrl', function($scope, $location) {
+  .controller('TestResultsCtrl', function($scope, $state) {
 
     // ensure test is started
     if (typeof $scope.$parent.test === 'undefined') {
-      $location.path('/');
+      $state.go('quicktest');
     } else {
 
       $scope.test = $scope.$parent.test;

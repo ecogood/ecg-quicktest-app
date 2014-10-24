@@ -10,7 +10,10 @@
 module.exports = function(grunt) {
 
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  require('jit-grunt')(grunt, {
+    ngconstant: 'grunt-ng-constant',
+    filesToJavascript: 'grunt-files-to-javascript-variables'
+  });
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);

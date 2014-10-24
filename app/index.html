@@ -27,7 +27,7 @@
 <div class="container">
 
   <div class="header">
-    <a href="" ng-click="$location.path('/')">
+    <a href="" ng-click="go('quicktest')">
       <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
     </a>
 
@@ -55,7 +55,8 @@
          progressbar></div>
   </div>
 
-  <div ng-view=""></div>
+  <!--<div ng-view=""></div>-->
+<section ui-view=""></section>
 
   <div class="footer text-right">
     <p>
@@ -86,8 +87,8 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-localization/angular-localization.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/bootstrap-progressbar/bootstrap-progressbar.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
