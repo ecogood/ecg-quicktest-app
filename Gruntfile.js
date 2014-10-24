@@ -12,7 +12,8 @@ module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('jit-grunt')(grunt, {
     ngconstant: 'grunt-ng-constant',
-    filesToJavascript: 'grunt-files-to-javascript-variables'
+    filesToJavascript: 'grunt-files-to-javascript-variables',
+    protractor: 'grunt-protractor-runner'
   });
 
   // Time how long tasks take. Can help when optimizing build times
