@@ -18,29 +18,10 @@ angular
     'ngTouch',
     'ngLocalize',
     'ngLocalize.Events',
-    'ui.router'
+    'ui.router',
+
+    'ecg.quicktest'
   ])
-  .config(function($stateProvider, $urlRouterProvider) {
-
-    $stateProvider
-      .state('ecgQuicktest', {
-        url: '/',
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
-      })
-      .state('ecgQuicktestQuestion', {
-        url: '/question/:questionNumber',
-        templateUrl: 'views/test-questions.html',
-        controller: 'TestQuestionsCtrl'
-      })
-      .state('ecgQuicktestResults', {
-        url: '/results',
-        templateUrl: 'views/test-results.html',
-        controller: 'TestResultsCtrl'
-      });
-    $urlRouterProvider.otherwise('/');
-
-  })
   .value('localeSupported', [
     'en-US',
     'de-DE'
