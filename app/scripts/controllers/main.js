@@ -8,19 +8,22 @@
  * Controller of the ecgQuicktestApp
  */
 angular.module('ecgQuicktestApp')
-  .controller('MainCtrl', function($scope, $location, locale, localeEvents, ecgQuicktestTexts) {
-
-    $scope.$location = $location;
+  .controller('MainCtrl', function($scope, $state, locale, localeEvents, ecgQuicktestTexts) {
 
     function refresh(lang) {
       var langShort = lang.substring(0,2);
       $scope.lang = langShort;
       $scope.t = ecgQuicktestTexts[langShort];
     }
-    refresh('de'); // locale.getLocale()
 
     $scope.setLocale = locale.setLocale;
     $scope.$on(localeEvents.localeChanges, function(event, locale) {
+      console.log('refresh(locale)');
       refresh(locale);
     });
+    $scope.setLocale('de-DE'); // locale.getLocale()
+
+    $scope.go = function(stateName) {
+      $state.go(stateName);
+    };
   });

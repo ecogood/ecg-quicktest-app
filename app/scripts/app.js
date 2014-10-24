@@ -13,29 +13,33 @@ angular
 //    'ngAnimate',
 //    'ngCookies',
 //    'ngResource',
-    'ngRoute',
+//    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'ngLocalize',
-    'ngLocalize.Events'
+    'ngLocalize.Events',
+    'ui.router'
   ])
-  .config(function($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('quicktest', {
+        url: '/',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/question/:questionNumber', {
+      .state('quicktestQuestion', {
+        url: '/question/:questionNumber',
         templateUrl: 'views/test-questions.html',
         controller: 'TestQuestionsCtrl'
       })
-      .when('/results', {
+      .state('quicktestResults', {
+        url: '/results',
         templateUrl: 'views/test-results.html',
         controller: 'TestResultsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
+    $urlRouterProvider.otherwise('/');
+
   })
   .value('localeSupported', [
     'en-US',

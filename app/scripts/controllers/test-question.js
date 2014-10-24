@@ -8,14 +8,14 @@
  * Controller of ...
  */
 angular.module('ecgQuicktestApp')
-  .controller('TestQuestionsCtrl', function($scope, $routeParams, $location) {
+  .controller('TestQuestionsCtrl', function($scope, $stateParams, $state) {
 
     var test = $scope.$parent.test;
-    var questionNumber = parseInt($routeParams.questionNumber);
+    var questionNumber = parseInt($stateParams.questionNumber);
 
     // ensure test is started
     if (typeof test === 'undefined' || typeof questionNumber !== 'number') {
-      $location.path('/');
+      $state.go('quicktest');
     }
     else {
 
@@ -28,7 +28,7 @@ angular.module('ecgQuicktestApp')
       $scope.goToPrevQuestion = function() {
         var prevQuestion = $scope.test.getPrevQuestion($scope.questionNumber);
         if (prevQuestion !== null) {
-          $location.path('question/' + prevQuestion);
+          $state.go('quicktestQuestion', {questionNumber: prevQuestion});
         } else {
           // there is no previous question, stay here
         }
@@ -37,10 +37,10 @@ angular.module('ecgQuicktestApp')
       $scope.goToNextQuestion = function() {
         var nextQuestion = $scope.test.getNextQuestion($scope.questionNumber);
         if (nextQuestion !== null) {
-          $location.path('question/' + nextQuestion);
+          $state.go('quicktestQuestion', {questionNumber: nextQuestion});
         } else {
           // there is no next question, go to results
-          $location.path('results');
+          $state.go('quicktestResults');
         }
       };
 

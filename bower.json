@@ -8,8 +8,8 @@
     "angular-sanitize": "1.2.0",
     "angular-cookies": "1.2.0",
     "angular-touch": "1.2.0",
-    "angular-route": "1.2.0",
     "angular-localization": "~1.1.2",
+    "angular-ui-router": "~0.2.11",
     "jquery": "~2.1.1",
     "bootstrap-progressbar": "~0.8.3"
   },

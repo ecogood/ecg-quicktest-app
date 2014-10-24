@@ -8,7 +8,7 @@
  * Controller of the ecgQuicktestApp
  */
 angular.module('ecgQuicktestApp')
-  .controller('HomeCtrl', function($scope, $log, $location, ecgQuicktestModel) {
+  .controller('HomeCtrl', function($scope, $log, $state, ecgQuicktestModel) {
 
     $scope.$parent.testProgress = 0;
     $scope.readMore = false;
@@ -28,6 +28,6 @@ angular.module('ecgQuicktestApp')
       test.setParticipantType($scope.participantType);
       test.getParticipant().name = $scope.participantName;
       $scope.$parent.test = test;
-      $location.path('question/1');
+      $state.go('quicktestQuestion', {questionNumber: 1});
     };
   });
