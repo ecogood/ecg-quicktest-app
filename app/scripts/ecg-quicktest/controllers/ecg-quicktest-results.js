@@ -7,8 +7,8 @@
  * # TestResultsCtrl
  * Controller of ...
  */
-angular.module('ecgQuicktestApp')
-  .controller('TestResultsCtrl', function($scope, $state) {
+angular.module('ecg.quicktest')
+  .controller('ECGQuicktestResultsCtrl', function($scope, $state) {
 
     // ensure test is started
     if (typeof $scope.$parent.test === 'undefined') {

@@ -7,8 +7,8 @@
  * # TestQuestionsCtrl
  * Controller of ...
  */
-angular.module('ecgQuicktestApp')
-  .controller('TestQuestionsCtrl', function($scope, $stateParams, $state) {
+angular.module('ecg.quicktest')
+  .controller('ECGQuicktestQuestionsCtrl', function($scope, $stateParams, $state) {
 
     var test = $scope.$parent.test;
     var questionNumber = parseInt($stateParams.questionNumber);

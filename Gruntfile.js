@@ -11,9 +11,11 @@ module.exports = function(grunt) {
 
   // Load grunt tasks automatically
   require('jit-grunt')(grunt, {
+    cdnify: 'grunt-google-cdn',
     ngconstant: 'grunt-ng-constant',
     filesToJavascript: 'grunt-files-to-javascript-variables',
-    protractor: 'grunt-protractor-runner'
+    protractor: 'grunt-protractor-runner',
+    useminPrepare: 'grunt-usemin'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -418,7 +420,7 @@ module.exports = function(grunt) {
 
     protractor: {
       options: {
-        configFile: "node_modules/protractor/referenceConf.js", // Default config file
+        configFile: 'node_modules/protractor/referenceConf.js', // Default config file
         keepAlive: true, // If false, the grunt process stops when the test fails.
         noColor: false, // If true, protractor will not use colors in its output.
         args: {
@@ -427,12 +429,13 @@ module.exports = function(grunt) {
       },
       e2eQuickTest: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "<%= dir.e2e %>/protractor.conf.js", // Target-specific config file
+          configFile: '<%= dir.e2e %>/protractor.conf.js', // Target-specific config file
           args: {} // Target-specific arguments
         }
       }
     },
 
+    /* jshint camelcase:false */
     json_merge: {
       englishFiles: {
         files: {
