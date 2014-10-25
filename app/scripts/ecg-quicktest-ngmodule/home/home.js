@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of the ecgQuicktestApp
  */
-angular.module('ecg.quicktest')
-  .controller('ECGQuicktestHomeCtrl', function($scope, $log, $state, ecgQuicktestModel) {
+angular.module('ecg-quicktest-ngmodule')
+  .controller('EcgQuicktestHomeCtrl', function($scope, $state, ecgQuicktestModel) {
 
     $scope.$parent.testProgress = 0;
     $scope.readMore = false;

@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
     scripts: 'app/scripts',
-    scriptsSrc: 'app/scripts-src',
+    quicktestModule: 'app/scripts/ecg-quicktest-ngmodule',
     styles: 'app/styles',
     e2e: 'test/e2e'
   };
@@ -60,13 +60,13 @@ module.exports = function(grunt) {
       },
       texts: {
         files: [
-          '<%= dir.scriptsSrc %>/i18n/*.json',
-          '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js'
+          '<%= dir.scripts %>/i18n/*.json',
+          '<%= dir.quicktestModule %>/services/quicktest-texts-base.js'
         ],
         tasks: ['json_merge', 'filesToJavascript']
       },
       browserifyQuicktestModel: {
-        files: ['<%= dir.scriptsSrc %>/services/quicktest-model-base.js'],
+        files: ['<%= dir.quicktestModule %>/services/quicktest-model-base.js'],
         tasks: ['browserify']
       },
       sass: {
@@ -150,8 +150,7 @@ module.exports = function(grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= dir.scripts %>/{,*/}*.js',
-          '<%= dir.scriptsSrc %>/{,*/}*.js'
+          '<%= dir.scripts %>/{,*/}*.js'
         ]
       },
       test: {
@@ -440,7 +439,7 @@ module.exports = function(grunt) {
       englishFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
-            '<%= dir.scriptsSrc %>/i18n/*en.json',
+            '<%= dir.scripts %>/i18n/*en.json',
             'node_modules/ecg-quicktest-texts/data/*en.json'
           ]
         }
@@ -448,7 +447,7 @@ module.exports = function(grunt) {
       germanFiles: {
         files: {
           '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
-            '<%= dir.scriptsSrc %>/i18n/*de.json',
+            '<%= dir.scripts %>/i18n/*de.json',
             'node_modules/ecg-quicktest-texts/data/*de.json'
           ]
         }
@@ -462,9 +461,9 @@ module.exports = function(grunt) {
           inputFilesFolder: '<%= dir.scripts %>/i18n/generated',
           inputFilePrefix: 'generated-texts.',
           inputFileExtension: 'json',
-          outputBaseFile: '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js',
+          outputBaseFile: '<%= dir.quicktestModule %>/services/quicktest-texts-base.js',
           outputBaseFileVariable: 'ecgQuicktestTexts',
-          outputFile: '<%= dir.scripts %>/services/generated/quicktest-texts.js'
+          outputFile: '<%= dir.quicktestModule %>/services/generated/quicktest-texts.js'
         }
       }
     },
@@ -472,8 +471,8 @@ module.exports = function(grunt) {
     browserify: {
       quicktestModel: {
         files: {
-          '<%= dir.scripts %>/services/generated/quicktest-model.js': [
-            '<%= dir.scriptsSrc %>/services/quicktest-model-base.js'
+          '<%= dir.quicktestModule %>/services/generated/quicktest-model.js': [
+            '<%= dir.quicktestModule %>/services/quicktest-model-base.js'
           ]
         }
       }

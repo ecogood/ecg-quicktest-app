@@ -6,7 +6,7 @@
  * @description
  * # progressBar
  */
-angular.module('ecg.quicktest')
+angular.module('ecg-quicktest-ngmodule')
   .directive('progressbar', function() {
     var linker = function($scope, element, attrs) {
       updateProgressBar(element, attrs);
