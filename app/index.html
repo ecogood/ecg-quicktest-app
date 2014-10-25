@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="styles/css/vendor/bootstrap-progressbar-3.2.0.css">
   <!-- endbuild -->
 </head>
-<body >
-<!--[if lt IE 7]>
+<body>
+
+<!--[if lt IE 9]>
 <p class="browsehappy">
   You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.
@@ -26,7 +27,7 @@
 <!-- Add your site or application content here -->
 <div class="container">
 
-  <div class="header">
+  <header class="header">
     <a href="" ng-click="go('ecgQuicktest')">
       <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
     </a>
@@ -49,16 +50,18 @@
     <div class="row text-center">
       <h1 class="header-title text-center" ng-bind="t.name"></h1>
     </div>
-  </div>
+  </header>
+
   <div class="progress progress-test">
     <div class="progress-bar" role="progressbar" data-transitiongoal="{{testProgress}}"
-         progressbar></div>
+         progressbar>
+    </div>
   </div>
 
   <!--<div ng-view=""></div>-->
-<section ui-view=""></section>
+  <section ui-view=""></section>
 
-  <div class="footer text-right">
+  <footer class="footer text-right">
     <p>
       made with
       <a href="https://github.com/ecogood/ecg-quicktest-app" class="svg-hover">
@@ -69,7 +72,7 @@
         </svg>
       </a>
     </p>
-  </div>
+  </footer>
 
 </div>
 
@@ -95,17 +98,20 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/vendor/bootstrap-progressbar.min.js"></script>
-<script src="scripts/ecg-quicktest/app.module.js"></script>
-<script src="scripts/ecg-quicktest/controllers/ecg-quicktest-home.js"></script>
-<script src="scripts/ecg-quicktest/controllers/ecg-quicktest-question.js"></script>
-<script src="scripts/ecg-quicktest/controllers/ecg-quicktest-results.js"></script>
-<script src="scripts/ecg-quicktest/directives/bootstrap-progressbar.js"></script>
-<script src="scripts/ecg-quicktest/config.route.js"></script>
-<script src="scripts/ecg-quicktest/config.value.js"></script>
+
 <script src="scripts/app.js"></script>
-<script src="scripts/services/generated/quicktest-texts.js"></script>
-<script src="scripts/services/generated/quicktest-model.js"></script>
-<script src="scripts/controllers/main.js"></script>
+
+<script src="scripts/ecg-quicktest-ngmodule/app.module.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-texts.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-model.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/home/home.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/question/question.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/results/results.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/progressbar.directive.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/config.route.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/config.value.js"></script>
+
+<script src="scripts/mainCtrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>

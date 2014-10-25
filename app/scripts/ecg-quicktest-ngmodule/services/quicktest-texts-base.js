@@ -2,7 +2,7 @@
 
 var ecgQuicktestTexts = {};
 
-angular.module('ecgQuicktestApp')
+angular.module('ecg-quicktest-ngmodule')
   .service('ecgQuicktestTexts', function() {
     return {
       en: ecgQuicktestTexts.en,

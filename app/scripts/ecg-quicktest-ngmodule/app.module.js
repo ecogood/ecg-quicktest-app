@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('ecg.quicktest', [
+  angular.module('ecg-quicktest-ngmodule', [
 
     /* Angular dependencies */
 

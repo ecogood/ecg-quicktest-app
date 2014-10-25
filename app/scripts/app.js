@@ -10,18 +10,18 @@
  */
 angular
   .module('ecgQuicktestApp', [
-//    'ngAnimate',
-//    'ngCookies',
-//    'ngResource',
-//    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'ngLocalize',
     'ngLocalize.Events',
     'ui.router',
 
-    'ecg.quicktest'
+    'ecg-quicktest-ngmodule'
   ])
+  .config(function($stateProvider) {
+    $stateProvider.appUrls = $stateProvider.appUrls || {};
+    $stateProvider.appUrls.quicktestUrl = '/';
+  })
   .value('localeSupported', [
     'en-US',
     'de-DE'
