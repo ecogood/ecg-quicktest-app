@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('ecg-quicktest-ngmodule')
+  angular.module('ecg-quicktest')
     .config(function($stateProvider, $urlRouterProvider) {
 
       $stateProvider

@@ -7,7 +7,7 @@
  * # TestResultsCtrl
  * Controller of ...
  */
-angular.module('ecg-quicktest-ngmodule')
+angular.module('ecg-quicktest')
   .controller('EcgQuicktestResultsCtrl', function($scope, $state) {
 
     // ensure test is started
