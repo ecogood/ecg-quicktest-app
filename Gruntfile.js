@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       },
       texts: {
         files: [
-          '<%= dir.scripts %>/i18n/*.json',
+          '<%= dir.quicktestModule %>/services/i18n/*.json',
           '<%= dir.quicktestModule %>/services/quicktest-texts-base.js'
         ],
         tasks: ['json_merge', 'filesToJavascript']
@@ -438,16 +438,16 @@ module.exports = function(grunt) {
     json_merge: {
       englishFiles: {
         files: {
-          '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
-            '<%= dir.scripts %>/i18n/*en.json',
+          '<%= dir.quicktestModule %>/services/i18n/generated/generated-texts.en.json': [
+            '<%= dir.quicktestModule %>/services/i18n/*en.json',
             'node_modules/ecg-quicktest-texts/data/*en.json'
           ]
         }
       },
       germanFiles: {
         files: {
-          '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
-            '<%= dir.scripts %>/i18n/*de.json',
+          '<%= dir.quicktestModule %>/services/i18n/generated/generated-texts.de.json': [
+            '<%= dir.quicktestModule %>/services/i18n/*de.json',
             'node_modules/ecg-quicktest-texts/data/*de.json'
           ]
         }
@@ -458,7 +458,7 @@ module.exports = function(grunt) {
       texts: {
         options: {
 //          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
-          inputFilesFolder: '<%= dir.scripts %>/i18n/generated',
+          inputFilesFolder: '<%= dir.quicktestModule %>/services/i18n/generated',
           inputFilePrefix: 'generated-texts.',
           inputFileExtension: 'json',
           outputBaseFile: '<%= dir.quicktestModule %>/services/quicktest-texts-base.js',
