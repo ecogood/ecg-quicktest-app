@@ -7,7 +7,7 @@
  * # TestQuestionsCtrl
  * Controller of ...
  */
-angular.module('ecg-quicktest-ngmodule')
+angular.module('ecg-quicktest')
   .controller('EcgQuicktestQuestionsCtrl', function($scope, $stateParams, $state) {
 
     var test = $scope.$parent.test;

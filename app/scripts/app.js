@@ -16,7 +16,7 @@ angular
     'ngLocalize.Events',
     'ui.router',
 
-    'ecg-quicktest-ngmodule'
+    'ecg-quicktest'
   ])
   .config(function($stateProvider) {
     $stateProvider.appUrls = $stateProvider.appUrls || {};

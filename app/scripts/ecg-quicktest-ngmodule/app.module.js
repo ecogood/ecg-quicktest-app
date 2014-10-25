@@ -1,7 +1,16 @@
 (function() {
   'use strict';
 
-  angular.module('ecg-quicktest-ngmodule', [
+  /**
+   * Requires:
+   * parent modules:
+   * - ui.router
+   * -
+   *
+   * $scope.t: for translations
+   *
+   */
+  angular.module('ecg-quicktest', [
 
     /* Angular dependencies */
 
