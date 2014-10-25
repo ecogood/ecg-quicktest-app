@@ -58,10 +58,9 @@
     </div>
   </div>
 
-  <!--<div ng-view=""></div>-->
   <section ui-view=""></section>
 
-  <footer class="footer text-right">
+  <footer class="footer text-right unselectable">
     <p>
       made with
       <a href="https://github.com/ecogood/ecg-quicktest-app" class="svg-hover">
@@ -99,16 +98,15 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/vendor/bootstrap-progressbar.min.js"></script>
 
-
 <script src="scripts/ecg-quicktest-ngmodule/app.module.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/config.route.js"></script>
+<script src="scripts/ecg-quicktest-ngmodule/config.value.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-texts.service.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-model.service.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/home/home.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/question/question.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/results/results.js"></script>
 <script src="scripts/ecg-quicktest-ngmodule/progressbar.directive.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/config.route.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/config.value.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/mainCtrl.js"></script>
