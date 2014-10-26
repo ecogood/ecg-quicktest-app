@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('ecgQuicktestApp', [
+  .module('app', [
     'ngSanitize',
     'ngTouch',
     'ngLocalize',

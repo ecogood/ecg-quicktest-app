@@ -7,8 +7,9 @@
  * # MainCtrl
  * Controller of the ecgQuicktestApp
  */
-angular.module('ecgQuicktestApp')
-  .controller('MainCtrl', function($scope, $state, locale, localeEvents, ecgQuicktestTexts) {
+angular.module('app')
+  .controller('MainCtrl', function($scope, $state, locale, localeEvents,
+                                   ecgQuicktestTexts) {
 
     function refresh(lang) {
       var langShort = lang.substring(0,2);
@@ -20,7 +21,9 @@ angular.module('ecgQuicktestApp')
     $scope.$on(localeEvents.localeChanges, function(event, locale) {
       refresh(locale);
     });
-    $scope.setLocale('de-DE'); // locale.getLocale()
+    // set german as default locale
+    // alternatively, one could use locale.getLocale() which return the browser locale
+    $scope.setLocale('de-DE');
 
     $scope.go = function(stateName) {
       $state.go(stateName);

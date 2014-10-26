@@ -1,54 +1,62 @@
-'use strict';
+(function() {
+  'use strict';
 
-/**
- * @ngdoc function
- * @name ecgQuicktestApp.controller:TestQuestionsCtrl
- * @description
- * # TestQuestionsCtrl
- * Controller of ...
- */
-angular.module('ecg-quicktest')
-  .controller('EcgQuicktestQuestionsCtrl', function($scope, $stateParams, $state) {
+  /**
+   * @name EcgQuicktestQuestionsCtrl
+   * @description Controller of the question view
+   */
+  angular.module('ecg-quicktest')
+    .controller('EcgQuicktestQuestionsCtrl', EcgQuicktestQuestionsCtrl);
 
-    var test = $scope.$parent.test;
+  /* @ngInject */
+  function EcgQuicktestQuestionsCtrl($scope, $state, $stateParams, ecgQuicktestService) {
+
+    var test = ecgQuicktestService.test;
     var questionNumber = parseInt($stateParams.questionNumber);
 
     // ensure test is started
     if (typeof test === 'undefined' || typeof questionNumber !== 'number') {
-      $state.go('ecgQuicktest');
+      $state.go('ecgQuicktest.home');
     }
     else {
 
-      $scope.test = test;
-      $scope.companyName = $scope.test.getParticipant().name;
-      $scope.questionNumber = questionNumber;
-      $scope.$parent.testProgress = $scope.test.getPercentageFinished();
-      $scope.question = $scope.t.test.questions[$scope.questionNumber - 1];
+      var vm = this;
+      vm.test = test;
+      vm.companyName = vm.test.getParticipant().name;
+      vm.questionNumber = questionNumber;
+      vm.question = $scope.t.test.questions[vm.questionNumber - 1];
 
-      $scope.goToPrevQuestion = function() {
-        var prevQuestion = $scope.test.getPrevQuestion($scope.questionNumber);
+      activate();
+
+      vm.goToPrevQuestion = function() {
+        var prevQuestion = vm.test.getPrevQuestion(vm.questionNumber);
         if (prevQuestion !== null) {
-          $state.go('ecgQuicktestQuestion', {questionNumber: prevQuestion});
+          $state.go('ecgQuicktest.question', {questionNumber: prevQuestion});
         } else {
           // there is no previous question, stay here
         }
       };
 
-      $scope.goToNextQuestion = function() {
-        var nextQuestion = $scope.test.getNextQuestion($scope.questionNumber);
+      vm.goToNextQuestion = function() {
+        var nextQuestion = vm.test.getNextQuestion(vm.questionNumber);
         if (nextQuestion !== null) {
-          $state.go('ecgQuicktestQuestion', {questionNumber: nextQuestion});
+          $state.go('ecgQuicktest.question', {questionNumber: nextQuestion});
         } else {
           // there is no next question, go to results
-          $state.go('ecgQuicktestResults');
+          $state.go('ecgQuicktest.results');
         }
       };
 
-      $scope.answerClicked = function(answerValue) {
-        $scope.test.setAnswer($scope.questionNumber, answerValue);
-        $scope.goToNextQuestion();
+      vm.answerClicked = function(answerValue) {
+        vm.test.setAnswer(vm.questionNumber, answerValue);
+        vm.goToNextQuestion();
       };
 
     }
 
-  });
+    function activate() {
+      $scope.$parent.testProgress = vm.test.getPercentageFinished();
+    }
+  }
+
+})();

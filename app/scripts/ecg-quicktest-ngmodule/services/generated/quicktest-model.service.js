@@ -4,8 +4,10 @@
 var ecgQuickTestModel = require('ecg-quicktest-model');
 
 angular.module('ecg-quicktest')
-  .service('ecgQuicktestModel', function() {
-    return ecgQuickTestModel;
+  .service('ecgQuicktestService', function() {
+    return {
+      model: ecgQuickTestModel
+    };
   });
 
 },{"ecg-quicktest-model":5}],2:[function(require,module,exports){

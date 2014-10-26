@@ -6,19 +6,25 @@
 
       $stateProvider
         .state('ecgQuicktest', {
+          abstract: true,
           url: '/',
+          templateUrl: 'scripts/ecg-quicktest-ngmodule/wrapper/wrapper.html',
+          controller: 'EcgQuicktestHomeCtrl as vm'
+        })
+        .state('ecgQuicktest.home', {
+          url: '',
           templateUrl: 'scripts/ecg-quicktest-ngmodule/home/home.html',
-          controller: 'EcgQuicktestHomeCtrl'
+          controller: 'EcgQuicktestHomeCtrl as vm'
         })
-        .state('ecgQuicktestQuestion', {
-          url: '/question/:questionNumber',
+        .state('ecgQuicktest.question', {
+          url: 'question/:questionNumber',
           templateUrl: 'scripts/ecg-quicktest-ngmodule/question/question.html',
-          controller: 'EcgQuicktestQuestionsCtrl'
+          controller: 'EcgQuicktestQuestionsCtrl as vm'
         })
-        .state('ecgQuicktestResults', {
-          url: '/results',
+        .state('ecgQuicktest.results', {
+          url: 'results',
           templateUrl: 'scripts/ecg-quicktest-ngmodule/results/results.html',
-          controller: 'EcgQuicktestResultsCtrl'
+          controller: 'EcgQuicktestResultsCtrl as vm'
         });
       $urlRouterProvider.otherwise('/');
 
