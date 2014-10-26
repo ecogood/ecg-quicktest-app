@@ -3,23 +3,13 @@
 
   /**
    * Requires:
-   * parent modules:
+   * 1) parent modules:
    * - ui.router
-   * -
    *
-   * $scope.t: for translations
+   * 2) translations:
+   * set $scope.t = ecgQuicktestTexts[langShort];
    *
    */
-  angular.module('ecg-quicktest', [
+  angular.module('ecg-quicktest', []);
 
-    /* Angular dependencies */
-
-
-    /* shared dependencies */
-
-
-    /* Feature dependencies */
-
-
-  ]);
 })();

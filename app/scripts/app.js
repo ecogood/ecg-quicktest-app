@@ -10,18 +10,18 @@
  */
 angular
   .module('app', [
+    /* Angular dependencies */
     'ngSanitize',
     'ngTouch',
     'ngLocalize',
     'ngLocalize.Events',
     'ui.router',
 
+    /* shared dependencies */
+
+    /* Feature dependencies */
     'ecg-quicktest'
   ])
-  .config(function($stateProvider) {
-    $stateProvider.appUrls = $stateProvider.appUrls || {};
-    $stateProvider.appUrls.quicktestUrl = '/';
-  })
   .value('localeSupported', [
     'en-US',
     'de-DE'
