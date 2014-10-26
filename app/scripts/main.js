@@ -15,6 +15,7 @@ angular.module('app')
       var langShort = lang.substring(0,2);
       $scope.lang = langShort;
       $scope.t = ecgQuicktestTexts[langShort];
+      // use angular.extend to merge different app texts
     }
 
     $scope.setLocale = locale.setLocale;
