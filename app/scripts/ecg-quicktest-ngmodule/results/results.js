@@ -1,28 +1,33 @@
-'use strict';
+(function() {
+  'use strict';
 
-/**
- * @ngdoc function
- * @name ecgQuicktestApp.controller:TestResultsCtrl
- * @description
- * # TestResultsCtrl
- * Controller of ...
- */
-angular.module('ecg-quicktest')
-  .controller('EcgQuicktestResultsCtrl', function($scope, $state) {
+  /**
+   * @name EcgQuicktestResultsCtrl
+   * @description Controller of the result view
+   */
+  angular.module('ecg-quicktest')
+    .controller('EcgQuicktestResultsCtrl', EcgQuicktestResultsCtrl);
+
+  /* @ngInject */
+  function EcgQuicktestResultsCtrl($scope, $state, ecgQuicktestService) {
+
+    var test = ecgQuicktestService.test;
 
     // ensure test is started
-    if (typeof $scope.$parent.test === 'undefined') {
-      $state.go('ecgQuicktest');
+    if (typeof test === 'undefined') {
+      $state.go('ecgQuicktest.home');
     } else {
+      var result = test.getResult();
 
-      $scope.test = $scope.$parent.test;
-      $scope.$parent.testProgress = $scope.test.getPercentageFinished();
-      $scope.companyName = $scope.test.getParticipant().name;
+      var vm = this;
+      vm.companyName = test.getParticipant().name;
+      vm.points = result.points;
+      vm.level = result.level;
+      vm.percentage = result.percentage;
+      vm.maxPoints = test.getMaxPoints();
 
-      var result = $scope.test.getResult();
-      $scope.points = result.points;
-      $scope.level = result.level;
-      $scope.percentage = result.percentage;
-      $scope.maxPoints = $scope.test.getMaxPoints();
+      $scope.$parent.testProgress = test.getPercentageFinished();
     }
-  });
+  }
+
+})();

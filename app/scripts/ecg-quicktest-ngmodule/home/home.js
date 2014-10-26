@@ -1,33 +1,47 @@
-'use strict';
+(function() {
+  'use strict';
 
-/**
- * @ngdoc function
- * @name ecgQuicktestApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the ecgQuicktestApp
- */
-angular.module('ecg-quicktest')
-  .controller('EcgQuicktestHomeCtrl', function($scope, $state, ecgQuicktestModel) {
+  /**
+   * @name EcgQuicktestHomeCtrl
+   * @description Controller of the home view
+   */
+  angular.module('ecg-quicktest')
+    .controller('EcgQuicktestHomeCtrl', EcgQuicktestHomeCtrl);
 
-    $scope.$parent.testProgress = 0;
-    $scope.readMore = false;
+  /* @ngInject */
+  function EcgQuicktestHomeCtrl($scope, $state, ecgQuicktestService) {
+    var vm = this;
 
-    $scope.participantType = 'company';
-    $scope.isSelfEmployed = 'false';
-    $scope.setSelfEmployed = function() {
-      if ($scope.isSelfEmployed === 'true') {
-        $scope.participantType = 'self-employed';
+    vm.readMore = false;
+    vm.participantName = '';
+    vm.participantType = '';
+    vm.isSelfEmployed = 'false';
+    vm.setSelfEmployed = setSelfEmployed;
+    vm.startTest = startTest;
+
+    activate();
+
+    function activate() {
+      vm.setSelfEmployed();
+      $scope.$parent.testProgress = 0;
+    }
+
+    function setSelfEmployed() {
+      if (vm.isSelfEmployed === 'true') {
+        vm.participantType = 'self-employed';
       } else {
-        $scope.participantType = 'company';
+        vm.participantType = 'company';
       }
-    };
+    }
 
-    $scope.startTest = function(){
-      var test = ecgQuicktestModel.factory();
-      test.setParticipantType($scope.participantType);
-      test.getParticipant().name = $scope.participantName;
-      $scope.$parent.test = test;
-      $state.go('ecgQuicktestQuestion', {questionNumber: 1});
-    };
-  });
+    function startTest() {
+      var test = ecgQuicktestService.model.factory();
+      test.setParticipantType(vm.participantType);
+      test.getParticipant().name = vm.participantName;
+      ecgQuicktestService.test = test;
+      $state.go('ecgQuicktest.question', {questionNumber: 1});
+    }
+
+  }
+
+})();
