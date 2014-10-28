@@ -1,6 +1,7 @@
 {
   "name": "ecg-quicktest",
   "version": "0.0.0",
+  "private": true,
   "dependencies": {
     "angular": "1.2.0",
     "json3": "~3.3.1",
@@ -8,10 +9,15 @@
     "angular-sanitize": "1.2.0",
     "angular-cookies": "1.2.0",
     "angular-touch": "1.2.0",
-    "angular-route": "1.2.0",
     "angular-localization": "~1.1.2",
+    "angular-ui-router": "~0.2.11",
     "jquery": "~2.1.1",
-    "bootstrap-progressbar": "~0.8.3"
+    "bootstrap-progressbar": "~0.8.3",
+    "bootstrap": "~3.2.0",
+    "blocks": "https://github.com/ecogood/blocks-ngmodule.git",
+    "angular-bootstrap-progressbar-directive": "https://github.com/nikolayhg/angular-bootstrap-progressbar-directive.git",
+    "ecg-assets-common": "https://github.com/ecogood/ecg-assets-common.git",
+    "ecg-quicktest-ngmodule": "https://github.com/ecogood/ecg-quicktest-ngmodule.git"
   },
   "devDependencies": {
     "angular-mocks": "1.2.0",

@@ -10,7 +10,13 @@
 module.exports = function(grunt) {
 
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  require('jit-grunt')(grunt, {
+    cdnify: 'grunt-google-cdn',
+    ngconstant: 'grunt-ng-constant',
+    filesToJavascript: 'grunt-files-to-javascript-variables',
+    protractor: 'grunt-protractor-runner',
+    useminPrepare: 'grunt-usemin'
+  });
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -20,7 +26,7 @@ module.exports = function(grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist',
     scripts: 'app/scripts',
-    scriptsSrc: 'app/scripts-src',
+    quicktestModule: 'app/scripts/ecg-quicktest-ngmodule',
     styles: 'app/styles',
     e2e: 'test/e2e'
   };
@@ -54,13 +60,13 @@ module.exports = function(grunt) {
       },
       texts: {
         files: [
-          '<%= dir.scriptsSrc %>/i18n/*.json',
-          '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js'
+          '<%= dir.quicktestModule %>/services/i18n/*.json',
+          '<%= dir.quicktestModule %>/services/quicktest-texts-base.service.js'
         ],
         tasks: ['json_merge', 'filesToJavascript']
       },
       browserifyQuicktestModel: {
-        files: ['<%= dir.scriptsSrc %>/services/quicktest-model-base.js'],
+        files: ['<%= dir.quicktestModule %>/services/quicktest-model-base.service.js'],
         tasks: ['browserify']
       },
       sass: {
@@ -144,8 +150,7 @@ module.exports = function(grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= dir.scripts %>/{,*/}*.js',
-          '<%= dir.scriptsSrc %>/{,*/}*.js'
+          '<%= dir.scripts %>/{,*/}*.js'
         ]
       },
       test: {
@@ -362,8 +367,8 @@ module.exports = function(grunt) {
               '.htaccess',
               '*.html',
               'views/{,*/}*.html',
-              'images/{,*/}*.{webp}'
-//              'fonts/*'
+              'images/{,*/}*.{webp}',
+              'vendor/**'
             ]
           },
           {
@@ -386,6 +391,14 @@ module.exports = function(grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      ngvendortemplates: {
+        expand: true,
+        dest: '<%= yeoman.app %>/vendor/templates',
+        cwd: 'bower_components',
+        src: [
+          'ecg-quicktest-ngmodule/src/{,*/}*.html'
+        ]
       }
     },
 
@@ -414,7 +427,7 @@ module.exports = function(grunt) {
 
     protractor: {
       options: {
-        configFile: "node_modules/protractor/referenceConf.js", // Default config file
+        configFile: 'node_modules/protractor/referenceConf.js', // Default config file
         keepAlive: true, // If false, the grunt process stops when the test fails.
         noColor: false, // If true, protractor will not use colors in its output.
         args: {
@@ -423,51 +436,8 @@ module.exports = function(grunt) {
       },
       e2eQuickTest: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
         options: {
-          configFile: "<%= dir.e2e %>/protractor.conf.js", // Target-specific config file
+          configFile: '<%= dir.e2e %>/protractor.conf.js', // Target-specific config file
           args: {} // Target-specific arguments
-        }
-      }
-    },
-
-    json_merge: {
-      englishFiles: {
-        files: {
-          '<%= dir.scripts %>/i18n/generated/generated-texts.en.json': [
-            '<%= dir.scriptsSrc %>/i18n/*en.json',
-            'node_modules/ecg-quicktest-texts/data/*en.json'
-          ]
-        }
-      },
-      germanFiles: {
-        files: {
-          '<%= dir.scripts %>/i18n/generated/generated-texts.de.json': [
-            '<%= dir.scriptsSrc %>/i18n/*de.json',
-            'node_modules/ecg-quicktest-texts/data/*de.json'
-          ]
-        }
-      }
-    },
-
-    filesToJavascript: {
-      texts: {
-        options: {
-//          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
-          inputFilesFolder: '<%= dir.scripts %>/i18n/generated',
-          inputFilePrefix: 'generated-texts.',
-          inputFileExtension: 'json',
-          outputBaseFile: '<%= dir.scriptsSrc %>/services/quicktest-texts-base.js',
-          outputBaseFileVariable: 'ecgQuicktestTexts',
-          outputFile: '<%= dir.scripts %>/services/generated/quicktest-texts.js'
-        }
-      }
-    },
-
-    browserify: {
-      quicktestModel: {
-        files: {
-          '<%= dir.scripts %>/services/generated/quicktest-model.js': [
-            '<%= dir.scriptsSrc %>/services/quicktest-model-base.js'
-          ]
         }
       }
     },
@@ -489,9 +459,6 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
-      'json_merge',
-      'filesToJavascript',
-      'browserify',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -505,7 +472,7 @@ module.exports = function(grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma',
+//    'karma',
     'protractor'
   ]);
 
@@ -534,14 +501,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('hint', [
     'jshint'
-  ]);
-
-  grunt.registerTask('convertTexts', [
-    'json_merge', 'filesToJavascript'
-  ]);
-
-  grunt.registerTask('browser', [
-    'browserify'
   ]);
 
   grunt.registerTask('ghpages', [

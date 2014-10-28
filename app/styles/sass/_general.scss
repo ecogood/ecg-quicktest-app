@@ -10,14 +10,16 @@ $distance-big: $distance-normal * 2;
 
 /* Remove Firefox outlines on links and selects */
 a, a:hover, a:active, a:focus {
-   outline: 0;
+  outline: 0;
 }
+
 @-moz-document url-prefix() {
-    select, select:-moz-focusring, select::-moz-focus-inner {
-       color: transparent !important;
-       text-shadow: 0 0 0 #000 !important;
-       background-image: none !important;
-    }
+  select, select:-moz-focusring,
+  select::-moz-focus-inner {
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+    background-image: none !important;
+  }
 }
 
 /* Layout */
@@ -60,4 +62,14 @@ a, a:hover, a:active, a:focus {
 
 .color-transparent {
   color: transparent;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
 }

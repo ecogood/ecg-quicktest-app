@@ -1,7 +1,7 @@
 'use strict';
 
 
-describe('E2E: book details view', function() {
+describe('Quicktest', function() {
 
   var highestAnswer;
   /**
@@ -64,7 +64,7 @@ describe('E2E: book details view', function() {
 
   it('should have 0% after filling out all answers with min points for \'self-employed\'', function() {
 
-    element(by.cssContainingText('option', 'Yes')).click().then(function() {
+    element(by.cssContainingText('option', 'Ja')).click().then(function() {
       var startTest = element(by.css('#btn-start-test'));
       startTest.click().then(function() {
         var answersFinished = function() {
@@ -83,7 +83,7 @@ describe('E2E: book details view', function() {
 
   it('should have 100% after filling out all answers with max points for \'self-employed\'', function() {
 
-    element(by.cssContainingText('option', 'Yes')).click().then(function() {
+    element(by.cssContainingText('option', 'Ja')).click().then(function() {
       var startTest = element(by.css('#btn-start-test'));
       startTest.click().then(function() {
         var answersFinished = function() {
