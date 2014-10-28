@@ -18,6 +18,7 @@ angular
     'ui.router',
 
     /* shared dependencies */
+    'blocks.modules',
 
     /* Feature dependencies */
     'ecg-quicktest'

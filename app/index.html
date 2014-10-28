@@ -8,6 +8,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -86,23 +87,29 @@
 <script src="bower_components/angular-localization/angular-localization.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/bootstrap-progressbar/bootstrap-progressbar.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap-progressbar-directive/progressbar.directive.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/vendor/bootstrap-progressbar.min.js"></script>
+<!-- Shared modules -->
+<script src="bower_components/blocks/src/blocks/modules/modules.module.js"></script>
+<script src="bower_components/blocks/src/blocks/modules/modules.js"></script>
 
-<script src="scripts/ecg-quicktest-ngmodule/app.module.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/config.route.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-texts.service.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/services/generated/quicktest-model.service.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/home/home.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/question/question.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/results/results.js"></script>
-<script src="scripts/ecg-quicktest-ngmodule/progressbar.directive.js"></script>
+<!-- quicktest ng module -->
+<script src="bower_components/ecg-quicktest-ngmodule/src/app.module.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/config.route.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/services/generated/quicktest-texts.service.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/services/generated/quicktest-model.service.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/wrapper/wrapper.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/home/home.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/question/question.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/results/results.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/blocks.modules.config.js"></script>
 <!-- endbuild -->
 </body>
 </html>
