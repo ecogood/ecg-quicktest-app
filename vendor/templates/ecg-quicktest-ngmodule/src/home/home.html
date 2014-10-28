@@ -1,0 +1,39 @@
+<div class="text-center">
+
+  <p class="lead" ng-bind="t.introduction.pitch">
+  </p>
+
+  <div class="readMore-container">
+    <a ng-click="vm.readMore=!vm.readMore" href="" ng-bind="t.quicktestMod.readMore"></a>
+
+    <div ng-show="vm.readMore" class="p-top">
+      <p ng-repeat="content in t.introduction.content" ng-bind-html="content">
+      </p>
+    </div>
+  </div>
+
+  <form role="form" class="question-data-form center-block">
+    <div class="form-group">
+      <label for="participantName" ng-bind="t.quicktestMod.CompanyName"></label>
+      <input type="text" class="form-control" id="participantName"
+             ng-model="vm.participantName">
+    </div>
+    <div class="form-group">
+      <label for="selfEmplyoed" ng-bind="t.quicktestMod.AreYouSelfEmployed"></label>
+      <select name="selfEmplyoed" id="selfEmplyoed" class="form-control"
+              ng-model="vm.isSelfEmployed" ng-change="vm.setSelfEmployed()">
+        <option value="false" ng-bind="t.quicktestMod.No"></option>
+        <option value="true" ng-bind="t.quicktestMod.Yes"></option>
+      </select>
+    </div>
+
+    <a id="btn-start-test" ng-click="vm.startTest()" ng-bind="t.quicktestMod.startTest"
+       href="" class="btn btn-lg btn-ecg-turquoise m-top-big">
+      <svg class="svg-icon" viewBox="0 0 20 20">
+        <path d="M9.896,3.838L0.792,1.562v14.794l9.104,2.276L19,16.356V1.562L9.896,3.838z M9.327,17.332L1.93,15.219V3.27
+                    l7.397,1.585V17.332z M17.862,15.219l-7.397,2.113V4.855l7.397-1.585V15.219z"></path>
+      </svg>
+    </a>
+  </form>
+
+</div>
