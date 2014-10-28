@@ -367,8 +367,8 @@ module.exports = function(grunt) {
               '.htaccess',
               '*.html',
               'views/{,*/}*.html',
-              'images/{,*/}*.{webp}'
-//              'fonts/*'
+              'images/{,*/}*.{webp}',
+              'vendor/**'
             ]
           },
           {
@@ -391,6 +391,14 @@ module.exports = function(grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      ngvendortemplates: {
+        expand: true,
+        dest: '<%= yeoman.app %>/vendor/templates',
+        cwd: 'bower_components',
+        src: [
+          'ecg-quicktest-ngmodule/src/{,*/}*.html'
+        ]
       }
     },
 
@@ -434,50 +442,6 @@ module.exports = function(grunt) {
       }
     },
 
-    /* jshint camelcase:false */
-    json_merge: {
-      englishFiles: {
-        files: {
-          '<%= dir.quicktestModule %>/services/i18n/generated/generated-texts.en.json': [
-            '<%= dir.quicktestModule %>/services/i18n/*en.json',
-            'node_modules/ecg-quicktest-texts/data/*en.json'
-          ]
-        }
-      },
-      germanFiles: {
-        files: {
-          '<%= dir.quicktestModule %>/services/i18n/generated/generated-texts.de.json': [
-            '<%= dir.quicktestModule %>/services/i18n/*de.json',
-            'node_modules/ecg-quicktest-texts/data/*de.json'
-          ]
-        }
-      }
-    },
-
-    filesToJavascript: {
-      texts: {
-        options: {
-//          inputFilesFolder: 'node_modules/ecg-quicktest-texts/data',
-          inputFilesFolder: '<%= dir.quicktestModule %>/services/i18n/generated',
-          inputFilePrefix: 'generated-texts.',
-          inputFileExtension: 'json',
-          outputBaseFile: '<%= dir.quicktestModule %>/services/quicktest-texts-base.service.js',
-          outputBaseFileVariable: 'ecgQuicktestTexts',
-          outputFile: '<%= dir.quicktestModule %>/services/generated/quicktest-texts.service.js'
-        }
-      }
-    },
-
-    browserify: {
-      quicktestModel: {
-        files: {
-          '<%= dir.quicktestModule %>/services/generated/quicktest-model.service.js': [
-            '<%= dir.quicktestModule %>/services/quicktest-model-base.service.js'
-          ]
-        }
-      }
-    },
-
     'gh-pages': {
       options: {
         base: 'dist'
@@ -495,9 +459,6 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
-      'json_merge',
-      'filesToJavascript',
-      'browserify',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -540,14 +501,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('hint', [
     'jshint'
-  ]);
-
-  grunt.registerTask('convertTexts', [
-    'json_merge', 'filesToJavascript'
-  ]);
-
-  grunt.registerTask('browser', [
-    'browserify'
   ]);
 
   grunt.registerTask('ghpages', [

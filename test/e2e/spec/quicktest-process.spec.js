@@ -1,7 +1,7 @@
 'use strict';
 
 
-describe('E2E: book details view', function() {
+describe('Quicktest', function() {
 
   var highestAnswer;
   /**

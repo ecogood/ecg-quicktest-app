@@ -1,15 +1,4 @@
 {
-	"quicktestMod": {
-		"startTest": "Test starten",
-		"readMore": "mehr lesen ...",
-		"PleaseEnter": "Bitte geben Sie ein",
-		"CompanyName": "Unternehmensname",
-		"AreYouSelfEmployed": "Sind Sie EinzelunternehmerIn?",
-		"Yes": "Ja",
-		"No": "Nein",
-		"PreviousQuestion": "Vorherige Frage",
-		"NextQuestion": "Nächste Frage"
-	},
 	"matrixVersion": "4.1",
 	"name": "Schnelltest Gemeinwohl-Ökonomie",
 	"introduction": {

@@ -1,15 +1,4 @@
 {
-	"quicktestMod": {
-		"startTest": "Start Test",
-		"readMore": "read more",
-		"PleaseEnter": "Please enter",
-		"CompanyName": "Company name",
-		"AreYouSelfEmployed": "Are you self-employed?",
-		"Yes": "Yes",
-		"No": "No",
-		"PreviousQuestion": "Previous Question",
-		"NextQuestion": "Next Question"
-	},
 	"matrixVersion": "4.1",
 	"name": "ECG Quick Test",
 	"introduction": {
