@@ -1,3 +1,2 @@
 app/scripts/vendor/**
-app/scripts/directives/bootstrap-progressbar.js
-Gruntfile.js
+app/scripts/ecg-quicktest-ngmodule/services/generated/**

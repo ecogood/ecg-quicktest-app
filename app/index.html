@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js htmlTag" ng-app="ecgQuicktestApp" ng-controller="MainCtrl">
+<html class="no-js htmlTag" ng-app="app" ng-controller="MainCtrl">
 <head>
   <meta charset="utf-8">
   <title ng-bind="t.name">Schnelltest Gemeinwohl-Ökonomie</title>
@@ -8,6 +8,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -15,8 +16,9 @@
   <link rel="stylesheet" href="styles/css/vendor/bootstrap-progressbar-3.2.0.css">
   <!-- endbuild -->
 </head>
-<body >
-<!--[if lt IE 7]>
+<body>
+
+<!--[if lt IE 9]>
 <p class="browsehappy">
   You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.
@@ -26,8 +28,8 @@
 <!-- Add your site or application content here -->
 <div class="container">
 
-  <div class="header">
-    <a href="" ng-click="$location.path('/')">
+  <header class="header">
+    <a href="" ng-click="go('ecgQuicktest.home')">
       <img src="images/ecg-logo.png" class="img-responsive center-block" alt="GWÖ"/>
     </a>
 
@@ -49,15 +51,11 @@
     <div class="row text-center">
       <h1 class="header-title text-center" ng-bind="t.name"></h1>
     </div>
-  </div>
-  <div class="progress progress-test">
-    <div class="progress-bar" role="progressbar" data-transitiongoal="{{testProgress}}"
-         progressbar></div>
-  </div>
+  </header>
 
-  <div ng-view=""></div>
+  <section ui-view=""></section>
 
-  <div class="footer text-right">
+  <footer class="footer text-right unselectable">
     <p>
       made with
       <a href="https://github.com/ecogood/ecg-quicktest-app" class="svg-hover">
@@ -68,7 +66,7 @@
         </svg>
       </a>
     </p>
-  </div>
+  </footer>
 
 </div>
 
@@ -86,22 +84,32 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-localization/angular-localization.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/bootstrap-progressbar/bootstrap-progressbar.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap-progressbar-directive/progressbar.directive.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/vendor/bootstrap-progressbar.min.js"></script>
+<!-- Shared modules -->
+<script src="bower_components/blocks/src/blocks/modules/modules.module.js"></script>
+<script src="bower_components/blocks/src/blocks/modules/modules.js"></script>
+
+<!-- quicktest ng module -->
+<script src="bower_components/ecg-quicktest-ngmodule/src/app.module.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/config.route.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/services/generated/quicktest-texts.service.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/services/generated/quicktest-model.service.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/wrapper/wrapper.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/home/home.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/question/question.js"></script>
+<script src="bower_components/ecg-quicktest-ngmodule/src/results/results.js"></script>
+
 <script src="scripts/app.js"></script>
-<script src="scripts/services/generated/quicktest-texts.js"></script>
-<script src="scripts/services/generated/quicktest-model.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/home.js"></script>
-<script src="scripts/controllers/test-question.js"></script>
-<script src="scripts/controllers/test-results.js"></script>
-<script src="scripts/directives/bootstrap-progressbar.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/blocks.modules.config.js"></script>
 <!-- endbuild -->
 </body>
 </html>

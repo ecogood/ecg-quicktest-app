@@ -1,19 +1,8 @@
 {
-	"app": {
-		"startTest": "Start Test",
-		"readMore": "read more",
-		"PleaseEnter": "Please enter",
-		"CompanyName": "Company name",
-		"AreYouSelfEmployed": "Are you self-employed?",
-		"Yes": "Yes",
-		"No": "No",
-		"PreviousQuestion": "Previous Question",
-		"NextQuestion": "Next Question"
-	},
 	"matrixVersion": "4.1",
 	"name": "ECG Quick Test",
 	"introduction": {
-		"pitch": "Learn with the help of 27 questions (20 questions for self-employed) how much your company is contributing to the common good",
+		"pitch": "Learn with the help of 27 questions (20 questions for self-employed) how much your company is contributing to the common good.",
 		"content": [
 			"The Economy for the Common Good ..... Die Gemeinwohl-Ökonomie ist eine Vision für eine menschenwürdige und nachhaltige Wirtschafts- und Lebensweise. Die Wirtschaft soll nach denselben Werten gestaltet werden, die menschliche Beziehungen gelingen lassen und zudem bereits in den Verfassungen verankert sind. Das erste Ziel des Wirtschaftens ist nicht mehr Profitmaximierung, sondern die Mehrung des Gemeinwohls.",
 			"Der Beitrag eines Unternehmens zum Gemeinwohl wird auf Basis der Gemeinwohl-Matrix definiert und messbar gemacht.",

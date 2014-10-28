@@ -9,34 +9,20 @@
  * Main module of the application.
  */
 angular
-  .module('ecgQuicktestApp', [
-//    'ngAnimate',
-//    'ngCookies',
-//    'ngResource',
-    'ngRoute',
+  .module('app', [
+    /* Angular dependencies */
     'ngSanitize',
     'ngTouch',
     'ngLocalize',
-    'ngLocalize.Events'
+    'ngLocalize.Events',
+    'ui.router',
+
+    /* shared dependencies */
+    'blocks.modules',
+
+    /* Feature dependencies */
+    'ecg-quicktest'
   ])
-  .config(function($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
-      })
-      .when('/question/:questionNumber', {
-        templateUrl: 'views/test-questions.html',
-        controller: 'TestQuestionsCtrl'
-      })
-      .when('/results', {
-        templateUrl: 'views/test-results.html',
-        controller: 'TestResultsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  })
   .value('localeSupported', [
     'en-US',
     'de-DE'

@@ -1,19 +1,8 @@
 {
-	"app": {
-		"startTest": "Test starten",
-		"readMore": "mehr lesen ...",
-		"PleaseEnter": "Bitte geben Sie ein",
-		"CompanyName": "Unternehmensname",
-		"AreYouSelfEmployed": "Sind Sie EinzelunternehmerIn?",
-		"Yes": "Ja",
-		"No": "Nein",
-		"PreviousQuestion": "Vorherige Frage",
-		"NextQuestion": "Nächste Frage"
-	},
 	"matrixVersion": "4.1",
 	"name": "Schnelltest Gemeinwohl-Ökonomie",
 	"introduction": {
-		"pitch": "Bekommen Sie anhand von 27 Fragen (Einzelunternehmen: 20 Fragen) Einblick, wie gemeinwohlorientiert Sie wirtschaften",
+		"pitch": "Bekommen Sie anhand von 27 Fragen (Einzelunternehmen: 20 Fragen) Einblick, wie gemeinwohlorientiert Sie wirtschaften.",
 		"content": [
 			"Die Gemeinwohl-Ökonomie ist eine Vision für eine menschenwürdige und nachhaltige Wirtschafts- und Lebensweise. Die Wirtschaft soll nach denselben Werten gestaltet werden, die menschliche Beziehungen gelingen lassen und zudem bereits in den Verfassungen verankert sind. Das erste Ziel des Wirtschaftens ist nicht mehr Profitmaximierung, sondern die Mehrung des Gemeinwohls.",
 			"Der Beitrag eines Unternehmens zum Gemeinwohl wird auf Basis der Gemeinwohl-Matrix definiert und messbar gemacht.",

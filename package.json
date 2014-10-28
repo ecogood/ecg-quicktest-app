@@ -1,8 +1,11 @@
 {
   "name": "ecg-quicktest-app",
   "version": "0.1.3",
+  "private": true,
   "description": "ECG quick test - test the common good contribution of your company",
   "homepage": "https://github.com/ecogood/ecg-quicktest-app",
+  "license": "MIT",
+  "licenseUrl": "https://github.com/ecogood/ecg-quicktest-app/LICENSE-MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ecogood/ecg-quicktest-app.git"
@@ -15,7 +18,7 @@
   ],
   "dependencies": {
     "ecg-quicktest-model": "^0.0.7",
-    "ecg-quicktest-texts": "^0.0.9"
+    "ecg-quicktest-texts": "^0.0.10"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
@@ -46,6 +49,7 @@
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.1.1",
     "grunt-wiredep": "^1.7.0",
+    "jit-grunt": "^0.9.0",
     "jshint-stylish": "^0.2.0",
     "karma": "^0.12.23",
     "karma-chrome-launcher": "^0.1.5",
