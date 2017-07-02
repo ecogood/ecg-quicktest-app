@@ -27,7 +27,7 @@ It consists of 3 npm packages:
 The texts and model packages can be installed via [npm](https://www.npmjs.org/search?q=ecg%20quicktest) 
 and used in any JavaScript application, like on the server with Node.js, in a mobile app, or any web application. 
 
-The packages are unit tested with [Mocha](http://visionmedia.github.io/mocha/) and [Chai](http://chaijs.com/) 
+The packages are unit tested with [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/) 
 and end-to-end tested with [Protractor](http://angular.github.io/protractor/).
 
 ## Tests
